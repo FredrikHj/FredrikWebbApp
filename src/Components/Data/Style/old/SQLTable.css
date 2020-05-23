@@ -1,0 +1,42 @@
+/* ================================================== To be Implemented as Styled Components ================================================== */
+#table1_body{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 32px;
+}
+#table1_tbody{
+  margin-top: 2px;
+  display: block;
+  height: 60vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+thead, tbody tr{
+  display: table;
+  width: 100%;
+  table-layout:fixed;
+  color: #000000;
+}
+#table1_tbody td{
+  border: 1px solid lightgrey;
+}
+#table1_body tr{
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+}
+#table1_body th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: #FFFFFF;
+  background: #AE0B05;
+  border: 1px solid #612E08;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+#table1_body thead {
+  width: 99%;
+}
