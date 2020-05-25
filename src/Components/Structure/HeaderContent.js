@@ -2,6 +2,9 @@
 Imports module */
 import React, { useState, useEffect } from 'react';
 
+import { connect } from "react-redux";
+import { addTodo } from "../Data/Redux/Actions";
+
 // React Router - ES6 modules
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -15,16 +18,16 @@ import { Button } from'../Data/Button';
 
 const HeaderContent = () => {
     let [ appName, updateAppName ] = useState('');
-    let [ correctAppUrl, setCorrectAppUrl ] = useState('');
+    //let [ correctAppUrl, setCorrectAppUrl ] = useState('');
     
     useEffect(() => {
       updateAppName('Fredrik Webbpage');
-      setAppUrl();
+      /* setAppUrl();
       appUrl$.subscribe((gotoPage) => {
         console.log("MainContent -> gotoPage", appUrl)
         setPageRoute(routeName[gotoPage]);
-      });
-    },[ appName, setAppUrl ]);
+      }); */
+    },[ appName ]);
     const runGoToPage = (e) => {
         updateGotoPage(e.target.id);
     }
@@ -32,7 +35,7 @@ const HeaderContent = () => {
         <>
             <HeaderStyle.headline>{ appName }</HeaderStyle.headline>
             <HeaderStyle.topBarContent>
-                {correctAppUrl === true && <span class="material-icons" style={ homeSymbolStyle }>home</span>}
+               {/* {correctAppUrl === true && <span class="material-icons" style={ homeSymbolStyle }>home</span>} */}
                 <Button
                     style={ '' }
                     name={ 'Fredriks Webbtjänster' }

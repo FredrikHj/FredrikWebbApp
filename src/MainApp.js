@@ -1,6 +1,10 @@
 /* ================================================== MainApp ==================================================
 Imports module */
 import React, { useState, useEffect } from 'react';
+
+import { connect } from "react-redux";
+import { showAppUrl } from "./Components/Data/Redux/Actions";
+
 import {Helmet} from "react-helmet";
 // React Router - ES6 modules
 import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom";
@@ -24,7 +28,7 @@ const MainApp = () => {
 
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
-    updateappUrl(appUrl());
+    showAppUrl(appUrl());
     gotoPage$.subscribe((gotoPage) => {
       console.log("MainContent -> gotoPage", gotoPage)
       setPageRoute(routeName[gotoPage]);
