@@ -6,20 +6,31 @@ import {Helmet} from "react-helmet";
 import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom";
 
 // Style
-import { MainStyle } from './Components/Data/Style/MainStyle';
+import { MainStyle } from './Components/Style/MainStyle';
+import { MainContentStyle  } from './Components/Style/MainStyle';
 
 // Generall components
-import { MainPage } from './MainPage';
+import HeaderContent from'./Components/Structure/HeaderContent';
+import FooterContent from'./Components/Structure/FooterContent';
+import { routeName } from'./Components/Data/RouteNames';
+import { WebbServices } from'./Components/Structure/WebbServices';
+import { gotoPage$, updateAppUrl } from'./Components/Data/Storage';
+import { MainPage } from'./MainPage';
+import { appUrl } from'./Components/Data/AppUrl';
 
 const MainApp = () => {
   let [ appName, updateAppName ] = useState('');
-  let [ redirectToPage, updateRedirectToPage ] = useState('/');
+  let [ pageRoute, setPageRoute ] = useState('/');
 
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
-    //if(redirectToPage === '') return <Redirect to={ `/`}/>
-
-  },[ appName ]);
+    updateappUrl(appUrl());
+    gotoPage$.subscribe((gotoPage) => {
+      console.log("MainContent -> gotoPage", gotoPage)
+      setPageRoute(routeName[gotoPage]);
+    });
+  },[ appName, pageRoute ]);
+  
   return (
     <MainStyle.body>
       <Helmet>
@@ -27,7 +38,22 @@ const MainApp = () => {
         <title>{`${appName}`}</title>
       </Helmet>
       <Router>
-       <Route exact path="/" component={ MainPage } />
+        <MainContentStyle.header>
+          <HeaderContent
+
+          />
+        </MainContentStyle.header>
+
+        <MainContentStyle.outerContentsContainer>
+          {pageRoute === '/' && <Redirect to={ `/`}/>}
+          {pageRoute === 'webbServices' && <Redirect to={ `/WebbServices`}/>}
+          <Route exact path="/" component={ MainPage } />
+          <Route exact path="/WebbServices" component={ WebbServices } />
+        </MainContentStyle.outerContentsContainer>
+
+        <MainContentStyle.footer>
+          <FooterContent/>
+        </MainContentStyle.footer>
       </Router>
     </MainStyle.body> 
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Components/Data/Style/MainStyle.js';
+import './Components/Style/MainStyle.js';
 import MainApp from './MainApp';
 import * as serviceWorker from './serviceWorker';
 

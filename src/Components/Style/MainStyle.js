@@ -20,10 +20,8 @@ export let MainContentStyle = {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: calc(50% - 345px);
-    width: 1000px;
     height: 75px;  
-    background-color: #333;
+    background-color: white;
   `,
   outerContentsContainer: styled.section`
     border: 1px solid red;
@@ -35,7 +33,6 @@ export let MainContentStyle = {
   contentsNavBar: styled.section`
     border: 1px solid red;
     width: 200px;
-
   `,
   innerContentsContainer: styled.section`
     border: 1px solid red;
@@ -51,7 +48,7 @@ export let MainContentStyle = {
 }
 export let HeaderStyle = {
   headline: styled.p`
-    width: 500px;
+    width: 50%;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -59,12 +56,43 @@ export let HeaderStyle = {
     display: flex;
     align-items: center;
     letter-spacing: 5px;
+    color: black;
+    margin-left: 10%;
   `,
-  Content: styled.section`
+  topBarContent: styled.section`
     border: 1px solid red;
     width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
+    align-items: center;
+  `,
+}
+
+// ============================== Btton Style ==============================
+export let CommonBtnStyle = {
+  btn: styled.button`
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 8px 12px;
+    box-shadow: 0px 1px 2px rgba(98, 98, 98, 0.18), 0px 0px 2px rgba(98, 98, 98, 0.18);
+    border-radius: 30px;
+    background-color: #4CAF50;
+      &:hover {
+        background-color: black;
+    }
+  `,
+  btnHeadline: styled.p`
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    right: 12px;
+    letter-spacing: 5px;
+    margin: 0;
   `,
 }
