@@ -1,11 +1,9 @@
 import { showAppUrlStr } from "./ActionTypes";
+import { connect } from "react-redux";
 
-let showAppUrlId = 0;
+import { appUrl } from'../AppUrl';
 
-export const showAppUrl = content => ({
-  type: showAppUrlStr,
-  payload: {
-    id: ++showAppUrlId,
-    content
-  }
-});
+export const RunAppUrl = () => ({
+  type: showAppUrlStr, url: appUrl()
+}); 
+console.log("RunAppUrl", RunAppUrl())

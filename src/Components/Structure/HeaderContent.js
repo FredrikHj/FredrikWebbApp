@@ -2,8 +2,6 @@
 Imports module */
 import React, { useState, useEffect } from 'react';
 
-import { connect } from "react-redux";
-import { addTodo } from "../Data/Redux/Actions";
 
 // React Router - ES6 modules
 import { BrowserRouter as Router, Link } from "react-router-dom";
