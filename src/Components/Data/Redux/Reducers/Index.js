@@ -1,4 +1,8 @@
 import { combineReducers } from "redux";
-import ShowAppUrl from'./ShowAppUrl';
+import updateAppUrl from'./ShowAppUrl';
 
-export default combineReducers({ ShowAppUrl});
+const allReducers = combineReducers({
+    appUrl: updateAppUrl,
+});
+
+export default allReducers;

@@ -1,2 +1,4 @@
-export const showAppUrlStr = "showAppUrlStr";
-console.log(showAppUrlStr);
+export const getInitialAppUrl = '/';
+export const getNewAppUrl = window.location.pathname ;//appUrl();
+
+console.log('rsg');

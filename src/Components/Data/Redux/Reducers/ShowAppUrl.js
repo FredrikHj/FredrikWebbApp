@@ -1,10 +1,13 @@
-import { showAppUrlStr } from "../ActionTypes";
+import { getInitialAppUrl, getNewAppUrl } from "../ActionTypes";
+import { changeAppUrl } from'../Actions';
 
-const initialState = ' ';
-
-const updateShowAppUrl  = (state, action) => {
-  console.log("updateShowAppUrl -> state", state)
-  if (state !== null) return initialState;
-  return state;
+const updateAppUrl = (state = getInitialAppUrl, action) => {
+    switch(action.type) {
+      case 'changeAppUrl':
+        return window.location.pathname;
+      default:
+      return state;
+    }
 }
-export default updateShowAppUrl;
+
+export default updateAppUrl;

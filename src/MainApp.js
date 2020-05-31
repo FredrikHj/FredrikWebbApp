@@ -1,6 +1,7 @@
 /* ================================================== MainApp ==================================================
 Imports module */
 import React, { useState, useEffect } from 'react';
+import { useSelector } from "react-redux";
 
 import {Helmet} from "react-helmet";
 // React Router - ES6 modules
@@ -12,28 +13,23 @@ import { MainContentStyle  } from './Components/Style/MainStyle';
 
 // Generall components
 import { WebbServices } from'./Components/Structure/WebbServices';
-import { gotoPage$, updateAppUrl } from'./Components/Data/Storage';
+import { gotoPage$ } from'./Components/Data/Storage';
 import HeaderContent from'./Components/Structure/HeaderContent';
 import FooterContent from'./Components/Structure/FooterContent';
 import { routeName } from'./Components/Data/RouteNames';
 import { MainPage } from'./MainPage';
 
-import { connect } from "react-redux";
-import { RunAppUrl } from "./Components/Data/Redux/Actions";
-
 const MainApp = (states) => {
   let [ appName, updateAppName ] = useState('');
-  let [ pageRoute, setPageRoute ] = useState('/');
+  let [ pageRoute, setPageRoute ] = useState('');
   
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
     gotoPage$.subscribe((gotoPage) => {
-      console.log("MainContent -> gotoPage", gotoPage)
       setPageRoute(routeName[gotoPage]);
     });
     
   },[ appName, pageRoute ]);
-  console.log("MainApp -> states", states)
   return (
     <MainStyle.body>
       <Helmet>
@@ -42,16 +38,14 @@ const MainApp = (states) => {
       </Helmet>
       <Router>
         <MainContentStyle.header>
-          <HeaderContent
-
-/>
+          <HeaderContent/>
         </MainContentStyle.header>
 
         <MainContentStyle.outerContentsContainer>
           {pageRoute === '/' && <Redirect to={ `/`}/>}
           {pageRoute === 'webbServices' && <Redirect to={ `/WebbServices`}/>}
           <Route exact path="/" component={ MainPage } />
-          <Route exact path="/WebbServices" component={ WebbServices } />
+          <Route path="/WebbServices" component={ WebbServices } />
         </MainContentStyle.outerContentsContainer>
 
         <MainContentStyle.footer>
@@ -62,4 +56,4 @@ const MainApp = (states) => {
   );
 }
 
-export default connect(null, RunAppUrl() )(MainApp);
+export default MainApp;
