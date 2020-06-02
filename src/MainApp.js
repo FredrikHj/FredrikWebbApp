@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom
 
 // Style
 import { MainStyle } from './Components/Style/MainStyle';
-import { MainContentStyle  } from './Components/Style/MainStyle';
+import { MainContentStyle, FooterStyle  } from './Components/Style/MainStyle';
 
 // Generall components
 import { WebbServices } from'./Components/Structure/WebbServices';
@@ -40,6 +40,7 @@ const MainApp = (states) => {
         <MainContentStyle.header>
           <HeaderContent/>
         </MainContentStyle.header>
+        <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
 
         <MainContentStyle.outerContentsContainer>
           {pageRoute === '/' && <Redirect to={ `/`}/>}
@@ -48,9 +49,9 @@ const MainApp = (states) => {
           <Route path="/WebbServices" component={ WebbServices } />
         </MainContentStyle.outerContentsContainer>
 
-        <MainContentStyle.footer>
+        <FooterStyle.footerContainer>
           <FooterContent/>
-        </MainContentStyle.footer>
+        </FooterStyle.footerContainer>
       </Router>
     </MainStyle.body> 
   );

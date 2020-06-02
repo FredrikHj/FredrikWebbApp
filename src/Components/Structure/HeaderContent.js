@@ -14,6 +14,7 @@ import { updateGotoPage, appUrl$ } from'../Data/Storage';
 
 // Generall components
 import { Button } from'../Data/Button';
+import  fredrikLogo from'../Data/bilder/logga_small.png';
 
 const HeaderContent = () => {
   let [ appName, updateAppName ] = useState('');
@@ -45,17 +46,23 @@ const HeaderContent = () => {
     }
     return (
         <>
-            <HeaderStyle.headline>{ appName }</HeaderStyle.headline>
-            <HeaderStyle.topBarContent>{ storeAppUrl }
-               {/* {correctAppUrl === true && <span class="material-icons" style={ homeSymbolStyle }>home</span>} */}
-                <Button
-                    style={ '' }
-                    name={ 'Fredriks Webbtjänster' }
-                    onClickFunction={ runGoToPage }
-                    id={ 'webbServices' }
-                    btnOptional={ '' }
-                />
-            </HeaderStyle.topBarContent>
+            <HeaderStyle.headline>
+              <img src={ fredrikLogo } alt="Fredriks logga!"/></HeaderStyle.headline>
+              <HeaderStyle.topBarContent>{ storeAppUrl }
+                {/* {correctAppUrl === true && <span class="material-icons" style={ homeSymbolStyle }>home</span>} */}
+                  <Button
+                      style={ '' }
+                      name={ 'Fredriks Webbtjänster' }
+                      onClickFunction={ runGoToPage }
+                      id={ 'webbServices' }
+                      btnOptional={ '' }
+                      />
+              </HeaderStyle.topBarContent>
+  {/*         <li><a id="m1" href="#Vad är 3d" onclick="n1HM1()">Vad är 3d</a></li>
+              <li><a id="m2" href="#Tjänster & Produkter" onclick="n1HM2();">Tjänster & Produkter</a></li>
+              <li><a id="m3" href="#Om" onclick="n1HM3();">Om</a></li>
+              <li><a id="m4" href="#Anpassa Sidan" onclick="n1HM4();">Anpassa sidan</a></li>
+*/}
         </>
     );
   }
