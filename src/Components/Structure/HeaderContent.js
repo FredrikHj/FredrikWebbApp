@@ -9,8 +9,8 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 // Style
 import { HeaderStyle  } from '../Style/MainStyle';
-import { homeSymbolStyle } from'../Style/SpecificStyle';
-import { updateGotoPage, appUrl$ } from'../Data/Storage';
+import { NavBarStyle, specificBtnStyle } from'../Style/NavBarStyle';
+import { updateGotoPage } from'../Data/Storage';
 
 // Generall components
 import { Button } from'../Data/Button';
@@ -45,24 +45,35 @@ const HeaderContent = () => {
         updateRedirectionPath(targetPage);
     }
     return (
-        <>
-            <HeaderStyle.headline>
-              <img src={ fredrikLogo } alt="Fredriks logga!"/></HeaderStyle.headline>
-              <HeaderStyle.topBarContent>{ storeAppUrl }
+      <>
+          <>
+              <HeaderStyle.appLogo src={ fredrikLogo } alt="Fredriks logga!"/>
+              <NavBarStyle.topBarContainer>
                 {/* {correctAppUrl === true && <span class="material-icons" style={ homeSymbolStyle }>home</span>} */}
                   <Button
-                      style={ '' }
-                      name={ 'Fredriks Webbtjänster' }
-                      onClickFunction={ runGoToPage }
-                      id={ 'webbServices' }
-                      btnOptional={ '' }
-                      />
-              </HeaderStyle.topBarContent>
-  {/*         <li><a id="m1" href="#Vad är 3d" onclick="n1HM1()">Vad är 3d</a></li>
-              <li><a id="m2" href="#Tjänster & Produkter" onclick="n1HM2();">Tjänster & Produkter</a></li>
-              <li><a id="m3" href="#Om" onclick="n1HM3();">Om</a></li>
-              <li><a id="m4" href="#Anpassa Sidan" onclick="n1HM4();">Anpassa sidan</a></li>
-*/}
+                    name={ 'Webbtjänster' }
+                    onClickFunction={ runGoToPage }
+                    id={ 'webbServices' }
+                    btnOptional={ '' }
+                  />
+                  <Button
+                    name={ '???' }
+                    onClickFunction={ 'runGoToPage' }
+                    id={ '' }
+                    btnOptional={ '' }
+                  />
+                  <Button
+                    name={ '???' }
+                    onClickFunction={ 'runGoToPage' }
+                    id={ '' }
+                    btnOptional={ '' }
+                  />
+    {/*<li><a id="m1" href="#Vad är 3d" onclick="n1HM1()">Vad är 3d</a></li>*/}
+              </NavBarStyle.topBarContainer>
+          </>
+          <>
+
+          </>
         </>
     );
   }

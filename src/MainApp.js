@@ -9,7 +9,9 @@ import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom
 
 // Style
 import { MainStyle } from './Components/Style/MainStyle';
+import { specificBtnStyle } from'./Components/Style/NavBarStyle';
 import { MainContentStyle, FooterStyle  } from './Components/Style/MainStyle';
+
 
 // Generall components
 import { WebbServices } from'./Components/Structure/WebbServices';
@@ -17,6 +19,7 @@ import { gotoPage$ } from'./Components/Data/Storage';
 import HeaderContent from'./Components/Structure/HeaderContent';
 import FooterContent from'./Components/Structure/FooterContent';
 import { routeName } from'./Components/Data/RouteNames';
+import { Button } from'./Components/Data/Button';
 import { MainPage } from'./MainPage';
 
 const MainApp = (states) => {
@@ -40,6 +43,15 @@ const MainApp = (states) => {
         <MainContentStyle.header>
           <HeaderContent/>
         </MainContentStyle.header>
+        <specificBtnStyle.lastNavPageContainer>
+          <Button
+            styleText={ specificBtnStyle.lastNavPage }
+            name={ 'Om' }
+            onClickFunction={ 'runGoToPage' }
+            id={ '' }
+            btnOptional={ '' }
+          />
+        </specificBtnStyle.lastNavPageContainer>
         <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
 
         <MainContentStyle.outerContentsContainer>
