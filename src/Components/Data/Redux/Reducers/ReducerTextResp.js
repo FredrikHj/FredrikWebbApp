@@ -1,13 +1,15 @@
 import { initialTextResp, saveTextResp } from "../ActionTypes";
 
 const updateTextResp = (state = initialTextResp, action) => {
-  console.log("action -> action", action)
-  switch(action.type) {
-    case 'upTextResp':
-    return action.payload;
+  if (action.payLoad !== undefined ) { 
+    switch(action.type) {
+      case saveTextResp:
+        return action.payLoad;
       default:
       return state;
     }
+  }
+  else return state;
 }
 
 export default updateTextResp;

@@ -18,14 +18,11 @@ export let axiosGet = (getType) => {
     console.log("axiosGet -> `${backendURL}/${routes}`", `${backendURL}/${routes}`)
     
     axios.get(`${backendURL}/${routes}`).then(response => {  
-        
-        textObj['textObj'] = response.data;
+        console.log("axiosGet -> response", response)
+        textObj['textObjs'] = response.data;
     }).
     catch(error => {});
     return textObj;
-    setTimeout(() => {
-        return textObj;
-    }, 1000);
 }
 const saveIntoStore = (data) => {
 

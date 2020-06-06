@@ -13,11 +13,15 @@ import { saveTextResp } from'./Components/Data/Redux/Actions/ActionUpdateTextRes
 import { axiosGet } from './Components/Data/Axios';
 
 export const MainPage = () => {
+  const getTextObj = useSelector(state => state);
   const dispatch = useDispatch();
+  const [ incommingText, updateIncommingText ] = useState({});
   useEffect(() => {
     console.log("MainPage -> axiosGet('GetText')", axiosGet('GetText'))
     dispatch(saveTextResp(axiosGet('GetText')));
+    updateIncommingText(getTextObj);
   }); 
+  console.log("MainPage -> incommingText", incommingText)
   return (
     <>
       <>Välkommen In</>
