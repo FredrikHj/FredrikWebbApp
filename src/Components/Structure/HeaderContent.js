@@ -1,20 +1,20 @@
 /* ================================================== HeaderPage ==================================================
 Imports module */
-import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from'react-redux';
-import { changeAppUrl } from'../Data/Redux/Actions';
+import React, { useState, useEffect } from 'react';
 
 // React Router - ES6 modules
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 // Style
-import { HeaderStyle  } from '../Style/MainStyle';
 import { NavBarStyle, specificBtnStyle } from'../Style/NavBarStyle';
+import { HeaderStyle  } from '../Style/MainStyle';
 import { updateGotoPage } from'../Data/Storage';
 
 // Generall components
-import { Button } from'../Data/Button';
+import { changeAppUrl } from'../Data/Redux/Actions/ActionChangeAppUrl';
 import  fredrikLogo from'../Data/bilder/logga_small.png';
+import { Button } from'../Data/Button';
 
 const HeaderContent = () => {
   let [ appName, updateAppName ] = useState('');
@@ -23,9 +23,7 @@ const HeaderContent = () => {
   let [ currentUrl, updateCurrentUrl ] = useState('');
 
   //let [ correctAppUrl, setCorrectAppUrl ] = useState('');
-  const storeAppUrl = useSelector(state => state.appUrl);
-  console.log("HeaderContent -> updateAppUrl", storeAppUrl)
-  console.log("changeAppUrl", changeAppUrl())
+  const getUrlState = useSelector(state => state);
   const dispatch = useDispatch();    
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
@@ -44,10 +42,16 @@ const HeaderContent = () => {
         updateUrlChanged(true);
         updateRedirectionPath(targetPage);
     }
+    console.log("HeaderContent -> getUrlState", getUrlState)
     return (
       <>
           <>
-              <HeaderStyle.appLogo src={ fredrikLogo } alt="Fredriks logga!"/>
+              {(getUrlState !== '/Welcome') 
+                ? <Link to="/Welcome">
+                    <HeaderStyle.appLogoLink src={ fredrikLogo } alt="Fredriks logga!"/>
+                  </Link>
+                : <HeaderStyle.appLogoNoLink src={ fredrikLogo } alt="Fredriks logga!"/>
+              }
               <NavBarStyle.topBarContainer>
                 {/* {correctAppUrl === true && <span class="material-icons" style={ homeSymbolStyle }>home</span>} */}
                   <Button
@@ -58,13 +62,13 @@ const HeaderContent = () => {
                   />
                   <Button
                     name={ '???' }
-                    onClickFunction={ 'runGoToPage' }
+                    onClickFunction={ runGoToPage }
                     id={ '' }
                     btnOptional={ '' }
                   />
                   <Button
                     name={ '???' }
-                    onClickFunction={ 'runGoToPage' }
+                    onClickFunction={ runGoToPage }
                     id={ '' }
                     btnOptional={ '' }
                   />

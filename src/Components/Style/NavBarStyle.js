@@ -15,7 +15,7 @@ export let NavBarStyle = {
 // ============================== Btton Style ==============================
 export let CommonBtnStyle = {
   btn: styled.button`
-    height: 50px;
+    height: 60px;
     padding: 8px 12px;
     border: none;
     border-radius: 30px;
@@ -40,7 +40,7 @@ export let CommonBtnStyle = {
           background-color: rgb(255, 140, 0);
           color: rgb(255, 140, 0);
           height: 30px;
-          margin-top: 50px;
+          margin-top: 70px;
           margin-left: -10%;
         }
       }
@@ -61,7 +61,7 @@ export let CommonBtnStyle = {
 }
 export const specificBtnStyle = {
   lastNavPageContainer: styled.section`
-    margin-top: -57px;
+    margin-top: -68px;
     margin-left: 1280px;
     border-right: none;
   `,

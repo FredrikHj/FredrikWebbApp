@@ -33,6 +33,16 @@ const MainApp = (states) => {
     });
     
   },[ appName, pageRoute ]);
+  
+  const runGoToPage = (e) => {
+/*     const targetPage = e.target.id;
+    updateCurrentUrl(targetPage);
+
+    updateGotoPage(targetPage);
+    updateUrlChanged(true);
+    updateRedirectionPath(targetPage); */
+  }
+  console.log("MainApp -> pageRoute", pageRoute)
   return (
     <MainStyle.body>
       <Helmet>
@@ -47,7 +57,7 @@ const MainApp = (states) => {
           <Button
             styleText={ specificBtnStyle.lastNavPage }
             name={ 'Om' }
-            onClickFunction={ 'runGoToPage' }
+            onClickFunction={ runGoToPage }
             id={ '' }
             btnOptional={ '' }
           />
@@ -55,9 +65,9 @@ const MainApp = (states) => {
         <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
 
         <MainContentStyle.outerContentsContainer>
-          {pageRoute === '/' && <Redirect to={ `/`}/>}
+          {pageRoute === '' && <Redirect to={ `/Welcome`}/>}
           {pageRoute === 'webbServices' && <Redirect to={ `/WebbServices`}/>}
-          <Route exact path="/" component={ MainPage } />
+          <Route exact path="/Welcome" component={ MainPage } />
           <Route path="/WebbServices" component={ WebbServices } />
         </MainContentStyle.outerContentsContainer>
 

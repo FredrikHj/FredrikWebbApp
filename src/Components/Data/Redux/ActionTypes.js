@@ -1,4 +1,4 @@
 export const getInitialAppUrl = '/';
-export const getNewAppUrl = window.location.pathname ;//appUrl();
-
-console.log('rsg');
+export const changeAppUrl = 'changeAppUrl';
+export const initialTextResp = {};
+export const saveTextResp = 'upTextResp';

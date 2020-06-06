@@ -23,9 +23,11 @@ export let MainContentStyle = {
     background-color: white
   `,
   headerEndLine: styled.section`
-    width: 100%;
+    position: relative;
+    width: 95%;
+    float: right;
     height: 20px;
-    margin-top: 7px;
+    margin-top: 8px;
     background-color: rgb(255, 140, 0);
     `,
   outerContentsContainer: styled.section`
@@ -42,9 +44,16 @@ export let MainContentStyle = {
     `,
 }
 export let HeaderStyle = {
-  appLogo: styled.img`
-    margin-left: 0;
-    width: 15%;
+  appLogoNoLink: styled.img`
+    position: relative;
+    left: 0;
+    width: 16.5%;
+    height: 158%;
+  `,
+  appLogoLink: styled.img`
+    position: relative;
+    left: 0;
+    width: 80%;
   `,
 }
 export let FooterStyle = {
