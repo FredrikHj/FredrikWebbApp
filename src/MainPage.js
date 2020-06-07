@@ -27,7 +27,6 @@ export const MainPage = (props) => {
       
       </>
       <>wesfwefwerf</>
-
     </>
   );
 }
