@@ -19,14 +19,13 @@ export const MainPage = () => {
   useEffect(() => {
     console.log("MainPage -> axiosGet('GetText')", axiosGet('GetText'))
     dispatch(saveTextResp(axiosGet('GetText')));
-    updateIncommingText(getTextObj);
+    if (incommingText === {}) updateIncommingText(getTextObj);
   }); 
   console.log("MainPage -> incommingText", incommingText)
   return (
     <>
       <>Välkommen In</>
       <>wesfwefwerf</>
-
     </>
   );
 }
