@@ -1,7 +1,7 @@
 /* ================================================== MainApp ==================================================
 Imports module */
 import React, { useState, useEffect } from 'react';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from'react-redux';
 
 import {Helmet} from "react-helmet";
 // React Router - ES6 modules
@@ -14,24 +14,28 @@ import { MainContentStyle, FooterStyle  } from './Components/Style/MainStyle';
 
 
 // Generall components
+import { saveTextResp } from'./Components/Data/Redux/Actions/ActionUpdateTextResp';
 import { WebbServices } from'./Components/Structure/WebbServices';
-import { gotoPage$ } from'./Components/Data/Storage';
 import HeaderContent from'./Components/Structure/HeaderContent';
 import FooterContent from'./Components/Structure/FooterContent';
 import { routeName } from'./Components/Data/RouteNames';
+import { gotoPage$ } from'./Components/Data/Storage';
+import { axiosGet } from './Components/Data/Axios';
 import { Button } from'./Components/Data/Button';
 import { MainPage } from'./MainPage';
 
-const MainApp = (states) => {
+const MainApp = () => {
   let [ appName, updateAppName ] = useState('');
   let [ pageRoute, setPageRoute ] = useState('');
-  
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
     gotoPage$.subscribe((gotoPage) => {
       setPageRoute(routeName[gotoPage]);
     });
-    
+    dispatch(saveTextResp(axiosGet('GetText')));    
   },[ appName, pageRoute ]);
   
   const runGoToPage = (e) => {

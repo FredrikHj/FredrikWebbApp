@@ -9,22 +9,23 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 // Style
 
 // Generall components
-import { saveTextResp } from'./Components/Data/Redux/Actions/ActionUpdateTextResp';
-import { axiosGet } from './Components/Data/Axios';
 
-export const MainPage = () => {
+export const MainPage = (props) => {
+  const [ incommingTextObj, updateIncommingTextObj ] = useState(null);
   const getTextObj = useSelector(state => state);
-  const dispatch = useDispatch();
-  const [ incommingText, updateIncommingText ] = useState({});
+  
   useEffect(() => {
-    console.log("MainPage -> axiosGet('GetText')", axiosGet('GetText'))
-    dispatch(saveTextResp(axiosGet('GetText')));
-    updateIncommingText(getTextObj);
-  }); 
-  console.log("MainPage -> incommingText", incommingText)
-  return (
+    if(incommingTextObj === null) updateIncommingTextObj(getTextObj);
+  }, [ incommingTextObj ]); 
+  
+  console.log("MainPage -> incommingTextObj", getTextObj)
+  console.log("MainPage -> incommingTextObj", incommingTextObj)
+    return (
     <>
-      <>Välkommen In</>
+      <>
+        Välkommen In
+      
+      </>
       <>wesfwefwerf</>
 
     </>
