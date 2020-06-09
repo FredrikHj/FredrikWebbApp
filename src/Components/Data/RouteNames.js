@@ -1,5 +1,6 @@
 // ================================================== Routes Name ==================================================
 export const routeName = {
-  welcomePage: 'welcome',
-  webbServices: 'webbServices',
+  mainPage: '/',
+  welcomeText: 'Welcome',
+  webbServices: 'WebbServices',
 };

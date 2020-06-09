@@ -1,6 +1,5 @@
 /* ================================================== HeaderPage ==================================================
 Imports module */
-import { useSelector, useDispatch } from'react-redux';
 import React, { useState, useEffect } from 'react';
 
 // React Router - ES6 modules
@@ -12,7 +11,7 @@ import { HeaderStyle  } from '../Style/MainStyle';
 import { updateGotoPage } from'../Data/Storage';
 
 // Generall components
-import { changeAppUrl } from'../Data/Redux/Actions/ActionChangeAppUrl';
+import { routeName } from'../Data/RouteNames';
 import  fredrikLogo from'../Data/bilder/logga_small.png';
 import { Button } from'../Data/Button';
 
@@ -23,11 +22,8 @@ const HeaderContent = () => {
   let [ currentUrl, updateCurrentUrl ] = useState('');
 
   //let [ correctAppUrl, setCorrectAppUrl ] = useState('');
-  const getUrlState = useSelector(state => state);
-  const dispatch = useDispatch();    
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
-    dispatch(changeAppUrl());
   },[ appName, redirectionPath ]);
   
   const runGoToPage = (e) => {
@@ -35,15 +31,15 @@ const HeaderContent = () => {
     updateCurrentUrl(targetPage);
     
     updateGotoPage(targetPage);
+
     updateUrlChanged(true);
+
     updateRedirectionPath(targetPage);
   }
-  console.log("HeaderContent -> getUrlState", getUrlState)
-
   return (
     <>
       <>
-          <Link to="/Welcome">
+          <Link to={`/${routeName.welcomeText}`}>
               <HeaderStyle.appLogoLink src={ fredrikLogo } alt="Fredriks logga!"/>
           </Link>
           <NavBarStyle.topBarContainer>

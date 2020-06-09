@@ -1,32 +1,28 @@
 /* ================================================== Axios ==================================================
 Imports module */
 import axios from 'axios';
-import { useSelector, useDispatch } from'react-redux';
 
 // Import inportant components for the specific page
-import { saveTextResp } from'./Redux/Actions/ActionUpdateTextResp';
+import { updateIncommingTextObj } from'./Storage';
 
 // Initialize container
-//const getUrlState = useSelector(state => state.appUrl);
-const backendURL = 'http://localhost:3001';
 
-export let axiosGet = (getType) => {
-    const textObj = {};
-    let routes = '';
+//const getUrlState = useSelector(state => state.appUrl);
+const backendURL = 'http://localhost:3001/GetText';
+
+export let axiosGet = (pageText) => {
+    let params = '';
     // Type of post method
-    if (getType === 'GetText') routes = 'GetText';
-    console.log("axiosGet -> `${backendURL}/${routes}`", `${backendURL}/${routes}`)
+    if (pageText === 'textMain') params = pageText;
     
-    axios.get(`${backendURL}/${routes}`).then(response => {  
-        console.log("axiosGet -> response", response)
-        textObj['textObjs'] = response.data;
+    axios.get(`${backendURL}:${params}`).then(response => {
+        console.log("axiosGet -> response", response.data)
+        // Only send the current object into correct components
+        updateIncommingTextObj(response.data[pageText]);
     }).
     catch(error => {});
-    return textObj;
 }
-const saveIntoStore = (data) => {
 
-}
 /* export let axiosPost = (postType, bodyData) => {      
     axios.post(
         `${backendURL}/SQLData/${ type }`

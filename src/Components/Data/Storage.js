@@ -1,30 +1,23 @@
 /* ==================================================  Props handler ==================================================
 Imports module */
 import {BehaviorSubject} from "rxjs";
+import { runAppUrl } from'./AppUrl';
 
-const incommingSQLDataArr = [];
-const userData = '';
+const incommingTextObj = {};
 const gotoPage = '';
+
 
 //===============================================
 
-export const incommingSQLDataArr$ = new BehaviorSubject(incommingSQLDataArr);
-export const userData$ = new BehaviorSubject(userData);
 export const gotoPage$ = new BehaviorSubject(gotoPage);
 export const appUrl$ = new BehaviorSubject(gotoPage);
+export const incommingTextObj$ = new BehaviorSubject(incommingTextObj);
 
-export function updateUserData(loginData){
-    /* The functions are triggered in another place.
-        The function updateLocalstorage is triggered together with the incomming data.
-        The incomming data is saved for the subscriber.  
-    */
-    if(loginData) {
-        userData$.next(loginData);
-    }
+export function updateIncommingTextObj(incommingTextObj){
+    console.log("updateSavedSQLData -> incommingTextObj", incommingTextObj)
+    if(incommingTextObj) incommingTextObj$.next(incommingTextObj);
 }
-export function updateSavedSQLData(incommingSQLDataArr){
-    if(incommingSQLDataArr) incommingSQLDataArr$.next(incommingSQLDataArr);
-}
+
 export function updateAppUrl(appUrl){
     if(appUrl) appUrl$.next(appUrl);
 }

@@ -1,6 +1,5 @@
 /* ================================================== MainPage ==================================================
 Imports module */
-import { useSelector, useDispatch } from'react-redux';
 import React, { useState, useEffect } from 'react';
 
 // React Router - ES6 modules
@@ -9,24 +8,32 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 // Style
 
 // Generall components
+import { incommingTextObj$ } from'./Components/Data/Storage';
+import { axiosGet } from './Components/Data/Axios';
 
-export const MainPage = (props) => {
-  const [ incommingTextObj, updateIncommingTextObj ] = useState(null);
-  const getTextObj = useSelector(state => state);
-  
+export const MainPage = () => {
+  const [ textObj, updateTextObj ] = useState({});
+  const [ newTextObj, updateNewTextObj ] = useState(true);
   useEffect(() => {
-    if(incommingTextObj === null) updateIncommingTextObj(getTextObj);
-  }, [ incommingTextObj ]); 
+    if (newTextObj === true) setInterval(() => {axiosGet('textMain');}, 2000);
+    incommingTextObj$.subscribe((incommingTextObj) => {
+      if (newTextObj === true){
+        updateTextObj(incommingTextObj);
+        updateNewTextObj(false);
+      }
+    });
+  }, [newTextObj]);
   
-  console.log("MainPage -> incommingTextObj", getTextObj)
-  console.log("MainPage -> incommingTextObj", incommingTextObj)
+   console.log("MainPage -> incommingTextObj", textObj)
+  
     return (
     <>
       <>
         Välkommen In
-      
       </>
-      <>wesfwefwerf</>
+      <>
+        {textObj.welcome} 
+      </>
     </>
   );
 }

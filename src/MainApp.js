@@ -1,7 +1,6 @@
 /* ================================================== MainApp ==================================================
 Imports module */
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from'react-redux';
 
 import {Helmet} from "react-helmet";
 // React Router - ES6 modules
@@ -14,39 +13,38 @@ import { MainContentStyle, FooterStyle  } from './Components/Style/MainStyle';
 
 
 // Generall components
-import { saveTextResp } from'./Components/Data/Redux/Actions/ActionUpdateTextResp';
 import { WebbServices } from'./Components/Structure/WebbServices';
 import HeaderContent from'./Components/Structure/HeaderContent';
 import FooterContent from'./Components/Structure/FooterContent';
 import { routeName } from'./Components/Data/RouteNames';
 import { gotoPage$ } from'./Components/Data/Storage';
-import { axiosGet } from './Components/Data/Axios';
 import { Button } from'./Components/Data/Button';
 import { MainPage } from'./MainPage';
+import { ObjectUnsubscribedError } from 'rxjs';
+import { runAppUrl } from'./Components/Data/AppUrl';
 
 const MainApp = () => {
   let [ appName, updateAppName ] = useState('');
   let [ pageRoute, setPageRoute ] = useState('');
-
-  const dispatch = useDispatch();
-
+  
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
     gotoPage$.subscribe((gotoPage) => {
+      console.log("MainApp -> gotoPage", gotoPage)
       setPageRoute(routeName[gotoPage]);
     });
-    dispatch(saveTextResp(axiosGet('GetText')));    
+    if (runAppUrl() === '/') window.location.pathname = "Welcome";
   },[ appName, pageRoute ]);
   
+  console.log("MainApp -> pageRoute", pageRoute)
   const runGoToPage = (e) => {
-/*     const targetPage = e.target.id;
+    /*     const targetPage = e.target.id;
     updateCurrentUrl(targetPage);
-
+    
     updateGotoPage(targetPage);
     updateUrlChanged(true);
     updateRedirectionPath(targetPage); */
   }
-  console.log("MainApp -> pageRoute", pageRoute)
   return (
     <MainStyle.body>
       <Helmet>
@@ -69,10 +67,10 @@ const MainApp = () => {
         <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
 
         <MainContentStyle.outerContentsContainer>
-          {pageRoute === '' && <Redirect to={ `/Welcome`}/>}
-          {pageRoute === 'webbServices' && <Redirect to={ `/WebbServices`}/>}
-          <Route exact path="/Welcome" component={ MainPage } />
-          <Route path="/WebbServices" component={ WebbServices } />
+          {pageRoute === routeName.mainPage && <Redirect to={ `/${routeName.welcomeText}`}/>}
+          <Route exact path={`/${routeName.welcomeText}`} component={ MainPage } />
+          {pageRoute === routeName.webbServices && <Redirect to={ `/${routeName.webbServices}`}/>}
+          <Route exact path={`/${routeName.webbServices}`} component={ WebbServices } />
         </MainContentStyle.outerContentsContainer>
 
         <FooterStyle.footerContainer>
