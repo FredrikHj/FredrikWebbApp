@@ -1,12 +1,18 @@
 /* ==================================================  Props handler ==================================================
 Imports module */
 import {BehaviorSubject} from "rxjs";
+
+import { axiosGet } from './Axios';
+
 import { runAppUrl } from'./AppUrl';
 
 const incommingTextObj = {};
 const gotoPage = '';
 
-
+// polling start the server every 1 second
+setInterval(() => {
+    axiosGet();
+}, 1000);
 //===============================================
 
 export const gotoPage$ = new BehaviorSubject(gotoPage);

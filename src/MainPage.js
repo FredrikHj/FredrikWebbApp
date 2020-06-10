@@ -13,15 +13,20 @@ import { CommonTextStyle } from'./Components/Style/TextStyle';
 import { incommingTextObj$ } from'./Components/Data/Storage';
 import { axiosGet } from './Components/Data/Axios';
 
+let getText;
 export const MainPage = () => {
   const [ textObj, updateTextObj ] = useState('');
   const [ newTextObj, updateNewTextObj ] = useState(true);
   useEffect(() => {
-    if (newTextObj === true) setInterval(() => {axiosGet('textMain');}, 500);
+    if (newTextObj === true) 
+/*     getText = setInterval(() => {
+      axiosGet('textMain');
+    }, 500); */
+  
     incommingTextObj$.subscribe((incommingTextObj) => {
-    console.log("MainPage -> incommingTextObj", incommingTextObj)
+    console.log("MainPage -> incommingTextObj", incommingTextObj.textMain)
       if (newTextObj === true){
-        updateTextObj(incommingTextObj);
+        updateTextObj(incommingTextObj.textMain);
         updateNewTextObj(false);
       }
     });
@@ -35,7 +40,7 @@ export const MainPage = () => {
         Välkommen In
       </CommonTextStyle.headLines>
       <CommonTextStyle.textParagraph>
-        {(textObj !== '')
+        {(textObj !== undefined)
           ?  `${textObj}`
           : 'Text inte mottagen'
         } 

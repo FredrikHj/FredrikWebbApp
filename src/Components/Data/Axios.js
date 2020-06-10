@@ -10,12 +10,8 @@ import { updateIncommingTextObj } from'./Storage';
 //const getUrlState = useSelector(state => state.appUrl);
 const backendURL = 'http://localhost:3001/GetText';
 
-export let axiosGet = (pageText) => {
-    let params = '';
-    // Type of post method
-    if (pageText === 'textMain') params = pageText;
-    
-    axios.get(`${backendURL}:${params}`).then(response => {
+export let axiosGet = () => {
+    axios.get(backendURL).then(response => {
         console.log("axiosGet -> response", response.data)
         // Only send the current object into correct components
         updateIncommingTextObj(response.data);
