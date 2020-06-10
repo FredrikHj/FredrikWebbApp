@@ -18,7 +18,7 @@ export let axiosGet = (pageText) => {
     axios.get(`${backendURL}:${params}`).then(response => {
         console.log("axiosGet -> response", response.data)
         // Only send the current object into correct components
-        updateIncommingTextObj(response.data[pageText]);
+        updateIncommingTextObj(response.data);
     }).
     catch(error => {});
 }

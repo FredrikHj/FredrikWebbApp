@@ -1,4 +1,4 @@
-/* ================================================== Style Rouls for Auth ==================================================
+/* ================================================== General Style Rouls ==================================================
 Imports module */
 import styled from 'styled-components';
 
@@ -42,6 +42,15 @@ export let MainContentStyle = {
   innerContentsContainer: styled.section`
     width: 1100px;
     `,
+  
+}
+export let PageContainerStyle = {
+  mainPage: styled.section`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  `,
 }
 export let HeaderStyle = {
   appLogoNoLink: styled.img`
