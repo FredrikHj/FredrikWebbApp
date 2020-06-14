@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 // Style
-import { NavBarStyle, specificBtnStyle } from'../Style/NavBarStyle';
+import { NavBarStyle, CommonBtnStyle, specificBtnStyle } from'../Style/NavBarStyle';
 import { HeaderStyle  } from '../Style/MainStyle';
 import { updateGotoPage } from'../Data/Storage';
 
@@ -39,28 +39,23 @@ const HeaderContent = () => {
   return (
     <>
       <>
-          <Link to={`/${routeName.welcomeText}`}>
-              <HeaderStyle.appLogoLink src={ fredrikLogo } alt="Fredriks logga!"/>
-          </Link>
+          <specificBtnStyle.logoBtn onClick={ runGoToPage } id="mainPage">
+            <HeaderStyle.appLogoLink src={ fredrikLogo } alt="Fredriks logga!"  id="mainPage"/>
+          </specificBtnStyle.logoBtn>
           <NavBarStyle.topBarContainer>
             {/* {correctAppUrl === true && <span class="material-icons" style={ homeSymbolStyle }>home</span>} */}
               <Button
-                name={ 'Webbtjänster' }
-                onClickFunction={ runGoToPage }
+                content={ <CommonBtnStyle.btnHeadline id={ 'webbServices' } onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>Webbtjänster</CommonBtnStyle.btnHeadline> }
+                onClickFunction={runGoToPage}
                 id={ 'webbServices' }
-                btnOptional={ '' }
               />
               <Button
-                name={ '???' }
-                onClickFunction={ runGoToPage }
-                id={ '' }
-                btnOptional={ '' }
+                content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>???</CommonBtnStyle.btnHeadline> }
+                onClickFunction={runGoToPage}
               />
               <Button
-                name={ '???' }
-                onClickFunction={ runGoToPage }
-                id={ '' }
-                btnOptional={ '' }
+                content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>???</CommonBtnStyle.btnHeadline> }
+                onClickFunction={runGoToPage}
               />
   {/*<li><a id="m1" href="#Vad är 3d" onclick="n1HM1()">Vad är 3d</a></li>*/}
             </NavBarStyle.topBarContainer>

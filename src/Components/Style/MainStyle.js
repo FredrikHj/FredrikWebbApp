@@ -1,6 +1,7 @@
 /* ================================================== General Style Rouls ==================================================
 Imports module */
 import styled from 'styled-components';
+import { color } from'./CommonCSSRoules';
 
 export let MainStyle = {
   body: styled.section`
@@ -28,7 +29,7 @@ export let MainContentStyle = {
     float: right;
     height: 20px;
     margin-top: 8px;
-    background-color: rgb(255, 140, 0);
+    background-color: ${color.darkOrange};
     `,
   outerContentsContainer: styled.section`
     display: flex;
@@ -44,13 +45,35 @@ export let MainContentStyle = {
     `,
   
 }
-export let PageContainerStyle = {
+export let PageMainContainerStyle = {
   mainPage: styled.section`
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
   `,
+}
+export let SubPageContainerStyle = {
+  container: styled.section`
+    border: 1px solid red;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: -75px;
+  `,
+  sidebar: styled.section`
+    border: 1px solid red;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: ${color.darkOrange};
+    border-radius: 70px;
+  `,
+  mainContent: styled.section`
+
+`,
 }
 export let HeaderStyle = {
   appLogoNoLink: styled.img`
@@ -72,7 +95,7 @@ export let FooterStyle = {
     justify-content: space-between;
     width: 1380px;
     height: 100px;
-    background-color: #333; color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     position: fixed;
     bottom: 0;
     `,

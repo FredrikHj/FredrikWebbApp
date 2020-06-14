@@ -6,11 +6,11 @@ import React from 'react';
 import { CommonBtnStyle } from '../Style/NavBarStyle';
 
 export let Button = (props) => {
-    const {btnOptional, styleBtn, styleText, name, onClickFunction, id } = props;
+    const {styleBtn, content, onClickFunction, id } = props;
     return(
         <>
             <CommonBtnStyle.btn  id={ id } onClick={ onClickFunction } style={ styleBtn }>
-                <CommonBtnStyle.btnHeadline id={ id } onClick={ onClickFunction } data-optional={ btnOptional } style={ styleText }>{ name }</CommonBtnStyle.btnHeadline>
+                {content}
             </CommonBtnStyle.btn>
         </>
     );

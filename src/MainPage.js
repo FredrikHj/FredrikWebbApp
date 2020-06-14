@@ -6,12 +6,13 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 // Style
-import { PageContainerStyle } from'./Components/Style/MainStyle';
+import { PageMainContainerStyle } from'./Components/Style/MainStyle';
 import { CommonTextStyle } from'./Components/Style/TextStyle';
 
 // Generall components
 import { incommingTextObj$ } from'./Components/Data/Storage';
 import { axiosGet } from './Components/Data/Axios';
+import Spinner from './Components/Data/Spinner.js';
 
 let getText;
 export const MainPage = () => {
@@ -35,16 +36,16 @@ export const MainPage = () => {
    console.log("MainPage -> incommingTextObj", typeof textObj)
   
     return (
-    <PageContainerStyle.mainPage>
+    <PageMainContainerStyle.mainPage>
       <CommonTextStyle.headLines>
         Välkommen In
       </CommonTextStyle.headLines>
       <CommonTextStyle.textParagraph>
         {(textObj !== undefined)
           ?  `${textObj}`
-          : 'Text inte mottagen'
+        : <Spinner str={'Text laddas'}/>
         } 
       </CommonTextStyle.textParagraph>
-    </PageContainerStyle.mainPage>
+    </PageMainContainerStyle.mainPage>
   );
 }

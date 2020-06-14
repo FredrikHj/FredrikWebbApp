@@ -8,9 +8,8 @@ import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom
 
 // Style
 import { MainStyle } from './Components/Style/MainStyle';
-import { specificBtnStyle } from'./Components/Style/NavBarStyle';
+import { specificBtnStyle, CommonBtnStyle } from'./Components/Style/NavBarStyle';
 import { MainContentStyle, FooterStyle  } from './Components/Style/MainStyle';
-
 
 // Generall components
 import { WebbServices } from'./Components/Structure/WebbServices';
@@ -20,12 +19,11 @@ import { routeName } from'./Components/Data/RouteNames';
 import { gotoPage$ } from'./Components/Data/Storage';
 import { Button } from'./Components/Data/Button';
 import { MainPage } from'./MainPage';
-import { ObjectUnsubscribedError } from 'rxjs';
 import { runAppUrl } from'./Components/Data/AppUrl';
 
 const MainApp = () => {
-  let [ appName, updateAppName ] = useState('');
-  let [ pageRoute, setPageRoute ] = useState('');
+  const [ appName, updateAppName ] = useState('');
+  const [ pageRoute, setPageRoute ] = useState('');
   
   useEffect(() => {
     updateAppName('Fredrik Webbpage');
@@ -57,11 +55,8 @@ const MainApp = () => {
         </MainContentStyle.header>
         <specificBtnStyle.lastNavPageContainer>
           <Button
-            styleText={ specificBtnStyle.lastNavPage }
-            name={ 'Om' }
-            onClickFunction={ runGoToPage }
-            id={ '' }
-            btnOptional={ '' }
+            content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>Om</CommonBtnStyle.btnHeadline> }
+            onClickFunction={runGoToPage}
           />
         </specificBtnStyle.lastNavPageContainer>
         <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>

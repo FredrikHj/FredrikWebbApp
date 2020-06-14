@@ -1,14 +1,16 @@
 /* ================================================== Style Rouls for Auth ==================================================
 Imports module */
 import styled from 'styled-components';
+import { color } from'./CommonCSSRoules';
 
+import { from } from 'rxjs';
 export let NavBarStyle = {
   topBarContainer: styled.section`
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 60%;
-    background-color: #333; 
+    background-color: ${color.darkBlackDarkGreen};
     border-bottom-left-radius: 30px;
   `,
 }
@@ -19,26 +21,26 @@ export let CommonBtnStyle = {
     padding: 8px 12px;
     border: none;
     border-radius: 30px;
-    background-color: #333;
+    background-color: ${color.darkBlackDarkGreen};
       &:hover {
-        background-color: rgb(255, 140, 0);
+        background-color: ${color.darkOrange};
         &::after {
           content: "v";
           width: 10px;
-          background-color: rgb(255, 140, 0);
-          color: rgb(255, 140, 0);
+          background-color: ${color.darkOrange};
+          color: ${color.darkOrange};
           height: 30px;
           margin-top: 50px;
           margin-left: -10%;
         }
       }
       &:focus {
-        background-color: rgb(255, 140, 0);
+        background-color: ${color.darkOrange};
         &::after {
           content: "v";
           width: 10px;
-          background-color: rgb(255, 140, 0);
-          color: rgb(255, 140, 0);
+          background-color: ${color.darkOrange};
+          color: ${color.darkOrange};
           height: 30px;
           margin-top: 70px;
           margin-left: -10%;
@@ -60,10 +62,19 @@ export let CommonBtnStyle = {
   `,
 }
 export const specificBtnStyle = {
+  logoBtn: styled.button`
+    background: none;
+    border: none;
+  `,
   lastNavPageContainer: styled.section`
     margin-top: -68px;
     margin-left: 1280px;
     border-right: none;
   `,
-  lastNavPage: { borderRight: 'none',}
+  lastNavPage: {
+    borderRight: 'none',
+  }, 
+  sideBarBtn: {
+    margin: '40px 20px 10px 20px',
+  },
 }
