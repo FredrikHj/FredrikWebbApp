@@ -6,24 +6,24 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 // Style
-import { PageMainContainerStyle } from'./Components/Style/MainStyle';
+import { MainContentStyle, PageMainContainerStyle } from'./Components/Style/MainStyle';
 import { CommonTextStyle } from'./Components/Style/TextStyle';
+import { specificBtnStyle, CommonBtnStyle } from'./Components/Style/NavBarStyle';
 
 // Generall components
+import HeaderContent from'./Components/Structure/HeaderContent';
+import { runGoToPage } from'./Components/Data/CommonFunctions';
 import { incommingTextObj$ } from'./Components/Data/Storage';
-import { axiosGet } from './Components/Data/Axios';
 import Spinner from './Components/Data/Spinner.js';
+import { navHeadLine } from'./Components/Data/NavHeadlines';
+import { Button } from'./Components/Data/Button';
 
-let getText;
 export const MainPage = () => {
   const [ textObj, updateTextObj ] = useState('');
   const [ newTextObj, updateNewTextObj ] = useState(true);
   useEffect(() => {
     if (newTextObj === true) 
-/*     getText = setInterval(() => {
-      axiosGet('textMain');
-    }, 500); */
-  
+
     incommingTextObj$.subscribe((incommingTextObj) => {
     console.log("MainPage -> incommingTextObj", incommingTextObj.textMain)
       if (newTextObj === true){
@@ -33,19 +33,47 @@ export const MainPage = () => {
     });
   }, [newTextObj, textObj]);
   
-   console.log("MainPage -> incommingTextObj", typeof textObj)
+  console.log("MainPage -> incommingTextObj", typeof textObj)
   
-    return (
-    <PageMainContainerStyle.mainPage>
-      <CommonTextStyle.headLines>
-        Välkommen In
-      </CommonTextStyle.headLines>
-      <CommonTextStyle.textParagraph>
-        {(textObj !== undefined)
-          ?  `${textObj}`
-        : <Spinner str={'Text laddas'}/>
-        } 
-      </CommonTextStyle.textParagraph>
-    </PageMainContainerStyle.mainPage>
+  return (
+    <>
+      <MainContentStyle.header>
+        <HeaderContent
+          content={ 
+            <>
+              <Button
+                styleBtn={ specificBtnStyle.btnInactive }
+                content={ <CommonBtnStyle.btnHeadline id={ 'webbServices' } onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navHeadLine.line1.str }</CommonBtnStyle.btnHeadline> }
+                onClickFunction={runGoToPage}
+                id={ navHeadLine.line1.str }
+              />
+              <Button
+                styleBtn={ specificBtnStyle.btnInactive }
+                content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navHeadLine.line2.str }</CommonBtnStyle.btnHeadline> }
+                onClickFunction={runGoToPage}
+                id={ navHeadLine.line2.str }
+              />
+              <Button
+                styleBtn={ specificBtnStyle.btnInactive }
+                content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>???</CommonBtnStyle.btnHeadline> }
+                onClickFunction={runGoToPage}
+              />
+            </>
+          }
+        />
+      </MainContentStyle.header>
+      <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
+      <PageMainContainerStyle.mainPage>
+        <CommonTextStyle.headLines>
+          Välkommen In
+        </CommonTextStyle.headLines>
+        <CommonTextStyle.textParagraph>
+          {(textObj !== undefined)
+            ?  `${textObj}`
+          : <Spinner str={'Text laddas'}/>
+          } 
+        </CommonTextStyle.textParagraph>
+      </PageMainContainerStyle.mainPage>
+    </>
   );
 }

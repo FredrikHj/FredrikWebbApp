@@ -6,11 +6,12 @@ import React from 'react';
 import { CommonBtnStyle } from '../Style/NavBarStyle';
 
 export let Button = (props) => {
-    const {styleBtn, content, onClickFunction, id } = props;
+    const { marker, styleBtn, content, onClickFunction, id } = props;
+    console.log("Button -> props", props)
     return(
         <>
-            <CommonBtnStyle.btn  id={ id } onClick={ onClickFunction } style={ styleBtn }>
-                {content}
+            <CommonBtnStyle.btn id={ id } onClick={ onClickFunction } style={ styleBtn }>
+               { content }
             </CommonBtnStyle.btn>
         </>
     );

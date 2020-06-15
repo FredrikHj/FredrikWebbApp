@@ -21,33 +21,16 @@ export let CommonBtnStyle = {
     padding: 8px 12px;
     border: none;
     border-radius: 30px;
-    background-color: ${color.darkBlackDarkGreen};
-      &:hover {
-        background-color: ${color.darkOrange};
-        &::after {
-          content: "v";
-          width: 10px;
-          background-color: ${color.darkOrange};
-          color: ${color.darkOrange};
-          height: 30px;
-          margin-top: 50px;
-          margin-left: -10%;
-        }
-      }
-      &:focus {
-        background-color: ${color.darkOrange};
-        &::after {
-          content: "v";
-          width: 10px;
-          background-color: ${color.darkOrange};
-          color: ${color.darkOrange};
-          height: 30px;
-          margin-top: 70px;
-          margin-left: -10%;
-        }
-      }
   `,
-  btnHeadline: styled.p`
+  btnMarker: styled.div`
+    width: 10px;
+    background-color: ${ color.darkOrange };
+    color: ${ color.darkOrange };
+    height: 10px;
+    margin-top: 6px;
+    margin-left: 49%;
+  `,
+    btnHeadline: styled.p`
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -66,15 +49,26 @@ export const specificBtnStyle = {
     background: none;
     border: none;
   `,
+    logo: styled.div`
+    background: none;
+    border: none;
+  `,
+  btnInactive: {
+    backgroundColor: color.darkBlackDarkGreen,
+  },
+
+  btnActive: {
+    backgroundColor: color.darkOrange,
+  },
   lastNavPageContainer: styled.section`
-    margin-top: -68px;
-    margin-left: 1280px;
+    margin-left: 340px;
     border-right: none;
   `,
   lastNavPage: {
     borderRight: 'none',
   }, 
   sideBarBtn: {
-    margin: '40px 20px 10px 20px',
+    margin: '40px 20px 20px 20px',
+    backgroundColor: color.darkBlackDarkGreen,
   },
 }

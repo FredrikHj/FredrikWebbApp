@@ -3,7 +3,7 @@ Imports module */
 import styled from 'styled-components';
 
 // ============================== Common Style ==============================
-export let CommonBtnStyle = {
+export let  = {
     btn: styled.button`
         display: flex;
         flex-direction: row;
