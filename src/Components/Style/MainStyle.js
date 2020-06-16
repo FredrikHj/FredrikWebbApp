@@ -24,10 +24,10 @@ export let MainContentStyle = {
     background-color: white;
   `,
   headerEndLine: styled.section`
-    width: 87.85%;
+    width: 90%;
     position: relative;
     height: 20px;
-    left: 168px;
+    left: 138px;
     top: 0px;
     background-color: ${color.darkOrange};
   `,

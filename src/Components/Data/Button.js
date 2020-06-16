@@ -6,7 +6,7 @@ import React from 'react';
 import { CommonBtnStyle } from '../Style/NavBarStyle';
 
 export let Button = (props) => {
-    const { marker, styleBtn, content, onClickFunction, id } = props;
+    const { groupName, styleBtn, content, onClickFunction, id } = props;
     console.log("Button -> props", props)
     return(
         <>

@@ -6,12 +6,16 @@ import { color } from'./CommonCSSRoules';
 import { from } from 'rxjs';
 export let NavBarStyle = {
   topBarContainer: styled.section`
+    width: 65%;
+    background-color: ${color.darkBlackDarkGreen};
+    border-bottom-left-radius: 30px;
+  `,
+  contentContainer: styled.section`
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 60%;
-    background-color: ${color.darkBlackDarkGreen};
-    border-bottom-left-radius: 30px;
+    margin-left: 10%;
+    margin-top: 7px;
   `,
 }
 // ============================== Btton Style ==============================
@@ -48,23 +52,28 @@ export const specificBtnStyle = {
   logoBtn: styled.button`
     background: none;
     border: none;
+    margin-left: -34px;
   `,
-    logo: styled.div`
+  logo: styled.div`
     background: none;
     border: none;
   `,
   btnInactive: {
     backgroundColor: color.darkBlackDarkGreen,
   },
-
   btnActive: {
     backgroundColor: color.darkOrange,
   },
   lastNavPageContainer: styled.section`
-    margin-left: 340px;
+    margin-left: 300px;
     border-right: none;
   `,
-  lastNavPage: {
+  lastNavPageInactive: {
+    backgroundColor: color.darkBlackDarkGreen,
+    borderRight: 'none',
+  },
+  lastNavPageActive: {
+    backgroundColor: color.darkOrange,
     borderRight: 'none',
   }, 
   sideBarBtn: {

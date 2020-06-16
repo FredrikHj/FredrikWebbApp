@@ -1,9 +1,8 @@
-import {routeName } from'./RouteNames';
+import { navRouteName } from'./NavRouteName';
 
+import { from } from "rxjs";
 export const runAppUrl = () => {
     let getUrlAdress = window.location.pathname;
-    console.log("runAppAddress -> getUrlAdress", getUrlAdress)
-
-    if(getUrlAdress === '/FredrikWebbApp') getUrlAdress = routeName.welcomeText;
+    if(getUrlAdress === '/FredrikWebbApp') window.location.pathname = navRouteName.headLine0.name;
     return getUrlAdress;
 }

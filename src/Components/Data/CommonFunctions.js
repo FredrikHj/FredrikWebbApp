@@ -1,12 +1,7 @@
 import { updateGotoPage } from'./Storage';
-
 export const runGoToPage = (e) => {
-    const targetPage = e.target.id;
-    //updateCurrentUrl(targetPage);
-    
+    const targetBtn = e.target;
+    const targetPage = targetBtn.id;
+    console.log("runGoToPage -> targetPage", targetPage)
     updateGotoPage(targetPage);
-
-    //updateUrlChanged(true);
-
-    //updateRedirectionPath(targetPage);
   }

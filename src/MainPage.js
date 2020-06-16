@@ -15,7 +15,7 @@ import HeaderContent from'./Components/Structure/HeaderContent';
 import { runGoToPage } from'./Components/Data/CommonFunctions';
 import { incommingTextObj$ } from'./Components/Data/Storage';
 import Spinner from './Components/Data/Spinner.js';
-import { navHeadLine } from'./Components/Data/NavHeadlines';
+import { navRouteName } from'./Components/Data/NavRouteName';
 import { Button } from'./Components/Data/Button';
 
 export const MainPage = () => {
@@ -38,29 +38,7 @@ export const MainPage = () => {
   return (
     <>
       <MainContentStyle.header>
-        <HeaderContent
-          content={ 
-            <>
-              <Button
-                styleBtn={ specificBtnStyle.btnInactive }
-                content={ <CommonBtnStyle.btnHeadline id={ 'webbServices' } onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navHeadLine.line1.str }</CommonBtnStyle.btnHeadline> }
-                onClickFunction={runGoToPage}
-                id={ navHeadLine.line1.str }
-              />
-              <Button
-                styleBtn={ specificBtnStyle.btnInactive }
-                content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navHeadLine.line2.str }</CommonBtnStyle.btnHeadline> }
-                onClickFunction={runGoToPage}
-                id={ navHeadLine.line2.str }
-              />
-              <Button
-                styleBtn={ specificBtnStyle.btnInactive }
-                content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } data-optional={ runGoToPage } style={ specificBtnStyle.lastNavPage }>???</CommonBtnStyle.btnHeadline> }
-                onClickFunction={runGoToPage}
-              />
-            </>
-          }
-        />
+        <HeaderContent/>
       </MainContentStyle.header>
       <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
       <PageMainContainerStyle.mainPage>

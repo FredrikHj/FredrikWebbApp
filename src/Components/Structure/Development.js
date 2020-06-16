@@ -9,18 +9,17 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import { CommonBtnStyle, specificBtnStyle } from'../Style/NavBarStyle';
 import { MainContentStyle, SubPageContainerStyle } from'../Style/MainStyle';
 import { CommonTextStyle } from'../Style/TextStyle';
-import { navHeadLine } from'../Data/NavHeadlines';
 
 // Generall components
 import { incommingTextObj$ } from'../Data/Storage';
 import { gotoPage$ } from'../Data/Storage';
-import { routeName } from'../Data/RouteNames';
 import Spinner from '../Data/Spinner.js';
 import { Button } from'../Data/Button';
 import { runGoToPage } from'../Data/CommonFunctions';
-import HeaderContent from'../Structure/HeaderContent';
+import HeaderContent from'./HeaderContent';
+import { navRouteName } from'../Data/NavRouteName';
 
-export const WebbServices = () => {
+export const Development = () => {
     const [ textObj, updateTextObj ] = useState('');
     const [ newTextObj, updateNewTextObj ] = useState(true);
     const [ pageRoute, setPageRoute ] = useState('');
@@ -37,54 +36,34 @@ export const WebbServices = () => {
       }
       gotoPage$.subscribe((gotoPage) => {
         console.log("MainApp -> gotoPage", gotoPage)
-        setPageRoute(routeName[gotoPage]);
+        //setPageRoute(navRouteName.headLine[1].gotoPage]);
       });
     }, [newTextObj, textObj]);
     return (
       <>
         <MainContentStyle.header>
-          <HeaderContent
-            content={ 
-              <>
-                <Button
-                  styleBtn={ specificBtnStyle.btnActive }
-                  content={ 
-                    <>
-                      <CommonBtnStyle.btnHeadline id={ 'webbServices' } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navHeadLine.line1.str }</CommonBtnStyle.btnHeadline> 
-                      <CommonBtnStyle.btnMarker></CommonBtnStyle.btnMarker>                  
-                    </>
-                  }
-                  onClickFunction={runGoToPage}
-                  id={ navHeadLine.line1.str }
-                />
-                <Button
-                  styleBtn={ specificBtnStyle.btnInactive }
-                  content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navHeadLine.line2.str }</CommonBtnStyle.btnHeadline> }
-                  onClickFunction={runGoToPage}
-                />
-                <Button
-                  styleBtn={ specificBtnStyle.btnInactive }
-                  content={ <CommonBtnStyle.btnHeadline onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>???</CommonBtnStyle.btnHeadline> }
-                  onClickFunction={runGoToPage}
-                />
-              </>
-            }
-          />
+          <HeaderContent/>
         </MainContentStyle.header>
         <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
         <SubPageContainerStyle.container>
           <SubPageContainerStyle.sidebar>
             <Button
               styleBtn={ specificBtnStyle.sideBarBtn }
-              content={ <CommonBtnStyle.btnHeadline id={ 'webbServices' } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navHeadLine.line1.subHead.line1 }</CommonBtnStyle.btnHeadline> }
+              content={ <CommonBtnStyle.btnHeadline id={ navRouteName.headLine1.subHead.headLine1.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navRouteName.headLine1.subHead.headLine1.name }</CommonBtnStyle.btnHeadline> }
               onClickFunction={runGoToPage}
-              id={ 'webbServices' }
+              id={ navRouteName.headLine1.subHead.headLine1.id }
             />
             <Button
               styleBtn={ specificBtnStyle.sideBarBtn }
-              content={ <CommonBtnStyle.btnHeadline id={ 'webbServices' } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>3D Modell</CommonBtnStyle.btnHeadline> }
+              content={ <CommonBtnStyle.btnHeadline id={ navRouteName.headLine1.subHead.headLine2.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navRouteName.headLine1.subHead.headLine2.name }</CommonBtnStyle.btnHeadline> }
               onClickFunction={runGoToPage}
-              id={ 'webbServices' }
+              id={ navRouteName.headLine1.subHead.headLine2.id }
+            />
+            <Button
+              styleBtn={ specificBtnStyle.sideBarBtn }
+              content={ <CommonBtnStyle.btnHeadline id={ navRouteName.headLine1.subHead.headLine3.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPage }>{ navRouteName.headLine1.subHead.headLine3.name }</CommonBtnStyle.btnHeadline> }
+              onClickFunction={runGoToPage}
+              id={ navRouteName.headLine1.subHead.headLine3.id }
             />
           </SubPageContainerStyle.sidebar>
           <SubPageContainerStyle.mainContent>

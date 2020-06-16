@@ -11,13 +11,16 @@ import { MainStyle, MainContentStyle, FooterStyle } from './Components/Style/Mai
 import { specificBtnStyle } from'./Components/Style/NavBarStyle';
 
 // Generall components
-import { WebbServices } from'./Components/Structure/WebbServices';
+import { Development } from'./Components/Structure/Development';
 import FooterContent from'./Components/Structure/FooterContent';
-import { routeName } from'./Components/Data/RouteNames';
+import { MyProjects } from'./Components/Structure/MyProjects';
+import { navRouteName } from'./Components/Data/NavRouteName';
+import { AbouteMe } from'./Components/Structure/AbouteMe';
 import { gotoPage$ } from'./Components/Data/Storage';
-import { MainPage } from'./MainPage';
 import { runAppUrl } from'./Components/Data/AppUrl';
+import { MainPage } from'./MainPage';
 
+import { from } from 'rxjs';
 const MainApp = () => {
   const [ appName, updateAppName ] = useState('');
   const [ pageRoute, setPageRoute ] = useState('');
@@ -26,12 +29,13 @@ const MainApp = () => {
     updateAppName('Fredrik Webbpage');
     gotoPage$.subscribe((gotoPage) => {
       console.log("MainApp -> gotoPage", gotoPage)
-      setPageRoute(routeName[gotoPage]);
+      setPageRoute( gotoPage);
     });
-    if (runAppUrl() === '/') window.location.pathname = "Welcome";
+    //if (runAppUrl() === '/Welcome') window.location.pathname = "Welcome";
   },[ appName, pageRoute ]);
+  console.log("MainApp -> runAppUrl()", runAppUrl())
   
-  console.log("MainApp -> pageRoute", pageRoute)
+  console.log("MainApp -> pageRoute", pageRoute.page)
 
   return (
     <MainStyle.body>
@@ -40,10 +44,15 @@ const MainApp = () => {
         <title>{`${appName}`}</title>
       </Helmet>
       <Router>
-          {pageRoute === routeName.mainPage && <Redirect to={ `/${routeName.welcomeText}`}/>}
-          <Route exact path={`/${routeName.welcomeText}`} component={ MainPage } />
-          {pageRoute === routeName.webbServices && <Redirect to={ `/${routeName.webbServices}`}/>}
-          <Route exact path={`/${routeName.webbServices}`} component={ WebbServices } />
+          {pageRoute === navRouteName.headLine0.id && <Redirect to={ `/${navRouteName.headLine0.route}`}/>}
+          <Route exact path={`/${navRouteName.headLine0.route}`} component={ MainPage } />
+          {pageRoute === navRouteName.headLine1.id && <Redirect to={ `/${navRouteName.headLine1.route}`}/>}
+          <Route exact path={`/${navRouteName.headLine1.route}`} component={ Development } />
+          {pageRoute === navRouteName.headLine2.id && <Redirect to={ `/${navRouteName.headLine2.route}`}/>}
+          <Route exact path={`/${navRouteName.headLine2.route}`} component={ MyProjects } />           
+          {pageRoute === navRouteName.lastHeadLine.id && <Redirect to={ `/${navRouteName.lastHeadLine.route}`}/>}
+          <Route exact path={`/${navRouteName.lastHeadLine.route}`} component={ AbouteMe } />
+
         <FooterStyle.footerContainer>
           <FooterContent/>
         </FooterStyle.footerContainer>
