@@ -19,6 +19,7 @@ import { AbouteMe } from'./Components/Structure/AbouteMe';
 import { gotoPage$ } from'./Components/Data/Storage';
 import { runAppUrl } from'./Components/Data/AppUrl';
 import { MainPage } from'./MainPage';
+import { HeaderContent } from'./Components/Structure/HeaderContent';
 
 import { from } from 'rxjs';
 const MainApp = () => {
@@ -44,15 +45,14 @@ const MainApp = () => {
         <title>{`${appName}`}</title>
       </Helmet>
       <Router>
-          {pageRoute === navRouteName.headLine0.id && <Redirect to={ `/${navRouteName.headLine0.route}`}/>}
-          <Route exact path={`/${navRouteName.headLine0.route}`} component={ MainPage } />
-          {pageRoute === navRouteName.headLine1.id && <Redirect to={ `/${navRouteName.headLine1.route}`}/>}
-          <Route exact path={`/${navRouteName.headLine1.route}`} component={ Development } />
-          {pageRoute === navRouteName.headLine2.id && <Redirect to={ `/${navRouteName.headLine2.route}`}/>}
-          <Route exact path={`/${navRouteName.headLine2.route}`} component={ MyProjects } />           
-          {pageRoute === navRouteName.lastHeadLine.id && <Redirect to={ `/${navRouteName.lastHeadLine.route}`}/>}
-          <Route exact path={`/${navRouteName.lastHeadLine.route}`} component={ AbouteMe } />
-
+        {pageRoute === navRouteName.headLine0.id && <Redirect to={ `/${navRouteName.headLine0.route}`}/>}
+        <Route exact path={`/${navRouteName.headLine0.route}`} component={ MainPage } />
+        {pageRoute === navRouteName.headLine1.id && <Redirect to={ `/${navRouteName.headLine1.route}`}/>}
+        <Route exact path={`/${navRouteName.headLine1.route}`} component={ Development } />
+        {pageRoute === navRouteName.headLine2.id && <Redirect to={ `/${navRouteName.headLine2.route}`}/>}
+        <Route exact path={`/${navRouteName.headLine2.route}`} component={ MyProjects } />           
+        {pageRoute === navRouteName.lastHeadLine.id && <Redirect to={ `/${navRouteName.lastHeadLine.route}`}/>}
+        <Route exact path={`/${navRouteName.lastHeadLine.route}`} component={ AbouteMe } />
         <FooterStyle.footerContainer>
           <FooterContent/>
         </FooterStyle.footerContainer>

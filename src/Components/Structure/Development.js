@@ -16,7 +16,7 @@ import { gotoPage$ } from'../Data/Storage';
 import Spinner from '../Data/Spinner.js';
 import { Button } from'../Data/Button';
 import { runGoToPage } from'../Data/CommonFunctions';
-import HeaderContent from'./HeaderContent';
+import { HeaderContent } from'./HeaderContent';
 import { navRouteName } from'../Data/NavRouteName';
 
 export const Development = () => {

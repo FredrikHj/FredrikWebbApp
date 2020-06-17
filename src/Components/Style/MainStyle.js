@@ -8,7 +8,7 @@ export let MainStyle = {
     margin-top: -8px;
     margin-left: calc(50% - 690px);
     width: 1380px;
-    height: 98vh;
+    height: 0px;
     -webkit-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
     -moz-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
     box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
@@ -21,7 +21,7 @@ export let MainContentStyle = {
     flex-direction: row;
     justify-content: space-between;
     height: 75px;
-    background-color: white;
+    background-color: none;
   `,
   headerEndLine: styled.section`
     width: 90%;
@@ -105,7 +105,7 @@ export let FooterStyle = {
     justify-content: space-between;
     width: 1380px;
     height: 100px;
-    color: rgb(255, 255, 255);
+    color: black;
     position: fixed;
     bottom: 0;
     `,

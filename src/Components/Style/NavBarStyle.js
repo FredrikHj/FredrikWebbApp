@@ -9,13 +9,15 @@ export let NavBarStyle = {
     width: 65%;
     background-color: ${color.darkBlackDarkGreen};
     border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: row;
   `,
   contentContainer: styled.section`
+    width: 650px;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 10%;
-    margin-top: 7px;
   `,
 }
 // ============================== Btton Style ==============================
@@ -34,7 +36,7 @@ export let CommonBtnStyle = {
     margin-top: 6px;
     margin-left: 49%;
   `,
-    btnHeadline: styled.p`
+  btnHeadline: styled.p`
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -45,7 +47,6 @@ export let CommonBtnStyle = {
     right: 12px;
     letter-spacing: 5px;
     margin: 0;
-    border-right:1px solid #bbb;
   `,
 }
 export const specificBtnStyle = {
@@ -65,16 +66,13 @@ export const specificBtnStyle = {
     backgroundColor: color.darkOrange,
   },
   lastNavPageContainer: styled.section`
-    margin-left: 300px;
-    border-right: none;
+    margin-top: 7px;
   `,
   lastNavPageInactive: {
     backgroundColor: color.darkBlackDarkGreen,
-    borderRight: 'none',
   },
   lastNavPageActive: {
     backgroundColor: color.darkOrange,
-    borderRight: 'none',
   }, 
   sideBarBtn: {
     margin: '40px 20px 20px 20px',

@@ -12,7 +12,7 @@ import { incommingTextObj$ } from'../Data/Storage';
 import Spinner from '../Data/Spinner.js';
 import { Button } from'../Data/Button';
 import { runGoToPage } from'../Data/CommonFunctions';
-import HeaderContent from'./HeaderContent';
+import { HeaderContent } from'./HeaderContent';
 import { navRouteName } from'../Data/NavRouteName';
 
 export const AbouteMe = () => {
@@ -37,16 +37,16 @@ export const AbouteMe = () => {
         </MainContentStyle.header>
         <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
         <PageMainContainerStyle.mainPage>
-        <CommonTextStyle.headLines>
-          Om Mig
-        </CommonTextStyle.headLines>
-        <CommonTextStyle.textParagraph>
-          {(textObj !== undefined)
-            ?  `${textObj}`
-          : <Spinner str={'Text laddas'}/>
-          } 
-        </CommonTextStyle.textParagraph>
-      </PageMainContainerStyle.mainPage>
+          <CommonTextStyle.headLines>
+            Om Mig
+          </CommonTextStyle.headLines>
+          <CommonTextStyle.textParagraph>
+            {(textObj !== undefined)
+              ?  'Text kommer snart ...................' //`${textObj}`
+            : <Spinner str={'Text laddas'}/>
+            } 
+          </CommonTextStyle.textParagraph>
+        </PageMainContainerStyle.mainPage>
       </>
     );
   }

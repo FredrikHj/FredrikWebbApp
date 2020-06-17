@@ -11,7 +11,7 @@ import { CommonTextStyle } from'./Components/Style/TextStyle';
 import { specificBtnStyle, CommonBtnStyle } from'./Components/Style/NavBarStyle';
 
 // Generall components
-import HeaderContent from'./Components/Structure/HeaderContent';
+import { HeaderContent } from'./Components/Structure/HeaderContent';
 import { runGoToPage } from'./Components/Data/CommonFunctions';
 import { incommingTextObj$ } from'./Components/Data/Storage';
 import Spinner from './Components/Data/Spinner.js';

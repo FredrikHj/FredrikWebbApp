@@ -16,7 +16,7 @@ import { Button } from'../Data/Button';
 import { runAppUrl } from'../Data/AppUrl';
 import { navRouteName } from'../Data/NavRouteName';
 
-const HeaderContent = (props) => {
+export const HeaderContent = (props) => {
   let [ appName, updateAppName ] = useState('');
   let [ urlChanged, updateUrlChanged ] = useState(false);
   let [ redirectionPath, updateRedirectionPath ] = useState('');
@@ -59,7 +59,7 @@ const HeaderContent = (props) => {
             id={ navRouteName.headLine1.id }
             groupName={ 'headLine1' }
           />
-          <Button
+{/*           <Button
             styleBtn={ runAppUrl() !== '/MinaProjekt' && specificBtnStyle.btnInactive || specificBtnStyle.btnActive }
             content={ runAppUrl() !== '/MinaProjekt' 
               && <CommonBtnStyle.btnHeadline id={ navRouteName.headLine2.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPageInactive }>{ navRouteName.headLine2.name }</CommonBtnStyle.btnHeadline> 
@@ -71,8 +71,8 @@ const HeaderContent = (props) => {
             }
             onClickFunction={runGoToPage}
             id={ navRouteName.headLine2.id }
-          />
-           {/*  {content} */}
+            /> */}
+            </NavBarStyle.contentContainer>
             <specificBtnStyle.lastNavPageContainer>
             <Button
               styleBtn={ runAppUrl() !== '/OmMig' && specificBtnStyle.btnInactive || specificBtnStyle.btnActive}
@@ -90,7 +90,6 @@ const HeaderContent = (props) => {
             />
           </specificBtnStyle.lastNavPageContainer>
 
-          </NavBarStyle.contentContainer>
      
         </NavBarStyle.topBarContainer>
         
@@ -101,4 +100,3 @@ const HeaderContent = (props) => {
       </>
     );
   }
-export default HeaderContent;
