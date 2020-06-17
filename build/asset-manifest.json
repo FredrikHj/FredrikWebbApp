@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/FredriksUtveckling/static/css/main.980ae378.chunk.css",
+    "main.js": "/FredriksUtveckling/static/js/main.4864f83c.chunk.js",
+    "main.js.map": "/FredriksUtveckling/static/js/main.4864f83c.chunk.js.map",
+    "runtime-main.js": "/FredriksUtveckling/static/js/runtime-main.248a8990.js",
+    "runtime-main.js.map": "/FredriksUtveckling/static/js/runtime-main.248a8990.js.map",
+    "static/js/2.0fffebb8.chunk.js": "/FredriksUtveckling/static/js/2.0fffebb8.chunk.js",
+    "static/js/2.0fffebb8.chunk.js.map": "/FredriksUtveckling/static/js/2.0fffebb8.chunk.js.map",
+    "index.html": "/FredriksUtveckling/index.html",
+    "precache-manifest.263d2bdbc44cf4038344d975405479a3.js": "/FredriksUtveckling/precache-manifest.263d2bdbc44cf4038344d975405479a3.js",
+    "service-worker.js": "/FredriksUtveckling/service-worker.js",
+    "static/css/main.980ae378.chunk.css.map": "/FredriksUtveckling/static/css/main.980ae378.chunk.css.map",
+    "static/js/2.0fffebb8.chunk.js.LICENSE.txt": "/FredriksUtveckling/static/js/2.0fffebb8.chunk.js.LICENSE.txt",
+    "static/media/logga_small.png": "/FredriksUtveckling/static/media/logga_small.20fa48e6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.248a8990.js",
+    "static/js/2.0fffebb8.chunk.js",
+    "static/css/main.980ae378.chunk.css",
+    "static/js/main.4864f83c.chunk.js"
+  ]
+}

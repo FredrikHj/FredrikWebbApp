@@ -5,9 +5,9 @@ import './Components/Style/MainStyle.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <MainApp />
-  </React.StrictMode>,
+  //<React.StrictMode basename={process.env.PUBLIC_URL}>
+    <MainApp />,
+  //</React.StrictMode>,
 
   document.getElementById('root')
 );
