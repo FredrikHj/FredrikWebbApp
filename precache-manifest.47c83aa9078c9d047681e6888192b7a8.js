@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a607740092d589ba342dc76df0b56645",
+    "revision": "139b0066334925ffa9118189c6e7868b",
     "url": "/FredrikWebbApp/index.html"
   },
   {
-    "revision": "7e7ffb70bc067c6a9c36",
+    "revision": "35200ef0c0e63a5f594e",
     "url": "/FredrikWebbApp/static/css/main.980ae378.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FredrikWebbApp/static/js/2.f6cbe252.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7e7ffb70bc067c6a9c36",
-    "url": "/FredrikWebbApp/static/js/main.5fdd4bd7.chunk.js"
+    "revision": "35200ef0c0e63a5f594e",
+    "url": "/FredrikWebbApp/static/js/main.7a16d45e.chunk.js"
   },
   {
     "revision": "587d700828c2d4d11f7a",

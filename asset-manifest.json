@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/FredrikWebbApp/static/css/main.980ae378.chunk.css",
-    "main.js": "/FredrikWebbApp/static/js/main.5fdd4bd7.chunk.js",
-    "main.js.map": "/FredrikWebbApp/static/js/main.5fdd4bd7.chunk.js.map",
+    "main.js": "/FredrikWebbApp/static/js/main.7a16d45e.chunk.js",
+    "main.js.map": "/FredrikWebbApp/static/js/main.7a16d45e.chunk.js.map",
     "runtime-main.js": "/FredrikWebbApp/static/js/runtime-main.4709926d.js",
     "runtime-main.js.map": "/FredrikWebbApp/static/js/runtime-main.4709926d.js.map",
     "static/js/2.f6cbe252.chunk.js": "/FredrikWebbApp/static/js/2.f6cbe252.chunk.js",
     "static/js/2.f6cbe252.chunk.js.map": "/FredrikWebbApp/static/js/2.f6cbe252.chunk.js.map",
     "index.html": "/FredrikWebbApp/index.html",
-    "precache-manifest.0fc1ec3c6f8d7d74562a8189fb46461b.js": "/FredrikWebbApp/precache-manifest.0fc1ec3c6f8d7d74562a8189fb46461b.js",
+    "precache-manifest.47c83aa9078c9d047681e6888192b7a8.js": "/FredrikWebbApp/precache-manifest.47c83aa9078c9d047681e6888192b7a8.js",
     "service-worker.js": "/FredrikWebbApp/service-worker.js",
     "static/css/main.980ae378.chunk.css.map": "/FredrikWebbApp/static/css/main.980ae378.chunk.css.map",
     "static/js/2.f6cbe252.chunk.js.LICENSE.txt": "/FredrikWebbApp/static/js/2.f6cbe252.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.4709926d.js",
     "static/js/2.f6cbe252.chunk.js",
     "static/css/main.980ae378.chunk.css",
-    "static/js/main.5fdd4bd7.chunk.js"
+    "static/js/main.7a16d45e.chunk.js"
   ]
 }
