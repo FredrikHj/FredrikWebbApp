@@ -96,6 +96,7 @@ export let HeaderStyle = {
     position: relative;
     left: 0;
     width: 80%;
+    background:none !important;
   `,
 }
 export let FooterStyle = {

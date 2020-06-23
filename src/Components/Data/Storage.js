@@ -10,9 +10,9 @@ const incommingTextObj = {};
 const gotoPage = '';
 
 // polling start the server every 1 second
-/* setInterval(() => {
+setInterval(() => {
     axiosGet();
-}, 1000); */
+}, 1000);
 //===============================================
 
 export const gotoPage$ = new BehaviorSubject(gotoPage);

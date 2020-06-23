@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 import {Helmet} from "react-helmet";
 // React Router - ES6 modules
-import { BrowserRouter as Router, Route, Redirect, Link } from "react-router-dom";
+import { BrowserRouter as Router /* HashRouter */, Route, Redirect, Link } from "react-router-dom";
 
 // Style
 import { MainStyle, MainContentStyle, FooterStyle } from './Components/Style/MainStyle';
@@ -27,16 +27,18 @@ const MainApp = () => {
   const [ pageRoute, setPageRoute ] = useState('');
   
   useEffect(() => {
-    updateAppName('Fredrik Webbpage');
+    updateAppName('Fredriks Utveckling');
     gotoPage$.subscribe((gotoPage) => {
       console.log("MainApp -> gotoPage", gotoPage)
-      setPageRoute( gotoPage);
+      
+      setPageRoute(gotoPage);
     });
-    //if (runAppUrl() === '/Welcome') window.location.pathname = "Welcome";
+    if(runAppUrl() === navRouteName.headLine0.route) setPageRoute(runAppUrl());
   },[ appName, pageRoute ]);
   console.log("MainApp -> runAppUrl()", runAppUrl())
+  console.log(navRouteName.headLine0.route);
   
-  console.log("MainApp -> pageRoute", pageRoute.page)
+  console.log("MainApp -> pageRoute", pageRoute)
 
   return (
     <MainStyle.body>
@@ -45,18 +47,18 @@ const MainApp = () => {
         <title>{`${appName}`}</title>
       </Helmet>
       <Router>
-        {pageRoute === navRouteName.headLine0.id && <Redirect to={ `/${navRouteName.headLine0.route}`}/>}
-        <Route exact path={`/${navRouteName.headLine0.route}`} component={ MainPage } />
+        {pageRoute === navRouteName.headLine0.route && <Redirect to={ navRouteName.headLine0.route } />}
+        <Route exact path={ navRouteName.headLine0.route } component={ MainPage } />
         {pageRoute === navRouteName.headLine1.id && <Redirect to={ `/${navRouteName.headLine1.route}`}/>}
         <Route exact path={`/${navRouteName.headLine1.route}`} component={ Development } />
         {pageRoute === navRouteName.headLine2.id && <Redirect to={ `/${navRouteName.headLine2.route}`}/>}
         <Route exact path={`/${navRouteName.headLine2.route}`} component={ MyProjects } />           
         {pageRoute === navRouteName.lastHeadLine.id && <Redirect to={ `/${navRouteName.lastHeadLine.route}`}/>}
         <Route exact path={`/${navRouteName.lastHeadLine.route}`} component={ AbouteMe } />
+      </Router>
         <FooterStyle.footerContainer>
           <FooterContent/>
         </FooterStyle.footerContainer>
-      </Router>
     </MainStyle.body> 
   );
 }

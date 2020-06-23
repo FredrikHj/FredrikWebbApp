@@ -35,8 +35,8 @@ export const HeaderContent = (props) => {
       <>
         {(runAppUrl() !== '/Welcome')
           ?
-            <specificBtnStyle.logoBtn onClick={ runGoToPage } id="welcome">
-              <HeaderStyle.appLogoLink src={ fredrikLogo } alt="Fredriks logga!" id="welcome" onClick={ runGoToPage }/>
+            <specificBtnStyle.logoBtn onClick={ runGoToPage } id={ navRouteName.headLine0.id }>
+              <HeaderStyle.appLogoLink src={ fredrikLogo } alt="Fredriks logga!" id={ navRouteName.headLine0.id } onClick={ runGoToPage }/>
             </specificBtnStyle.logoBtn>
           : 
             <specificBtnStyle.logo>
