@@ -27,20 +27,19 @@ const MainApp = () => {
   const [ pageRoute, setPageRoute ] = useState('');
   
   useEffect(() => {
-    if(runAppUrl() === '/') setPageRoute(runAppUrl());
     updateAppName('Fredriks Utveckling');
     gotoPage$.subscribe((gotoPage) => {
       console.log("MainApp -> gotoPage", gotoPage)
-      
+      if (gotoPage === 'FredrikDev') gotoPage = '/';
       setPageRoute(gotoPage);
     });
-    console.log("MainApp -> runAppUrl()", runAppUrl())
-    //if(runAppUrl() === navRouteName.headLine0.name) setPageRoute(navRouteName.headLine0.name);
+    if(runAppUrl() === '/') setPageRoute(runAppUrl());
   },[ appName, pageRoute ]);
   console.log(navRouteName.headLine0.route);
   
+  console.log("MainApp -> runAppUrl()", runAppUrl())
   console.log("MainApp -> pageRoute", pageRoute)
-
+  
   return (
     <MainStyle.body>
       <Helmet>
@@ -48,7 +47,7 @@ const MainApp = () => {
         <title>{`${appName}`}</title>
       </Helmet>
       <HashRouter basename="/">
-        {pageRoute === '/' || pageRoute === navRouteName.headLine0.name && <Redirect to={ navRouteName.headLine0.route } />}
+        {pageRoute === '/' && <Redirect to={ navRouteName.headLine0.route } />}
         <Route exact path={ navRouteName.headLine0.route } component={ MainPage } />
         
         {pageRoute === navRouteName.headLine1.id && <Redirect to={ navRouteName.headLine1.route}/>}

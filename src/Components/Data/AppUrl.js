@@ -5,8 +5,8 @@ export const runAppUrl = () => {
     let getAppPathAddress = '';
 
     //Get you a slash indentifying the route as = /
-    getAppPathAddress = window.location.pathname;
-    console.log(window.location);
-    
+    getAppPathAddress = window.location.hash.split('#')[1];
+    console.log("runAppUrl -> getAppPathAddress", getAppPathAddress)
+    //if(getAppPathAddress === '/') getAppPathAddress = navRouteName.headLine0.route;
     return getAppPathAddress;
 }
