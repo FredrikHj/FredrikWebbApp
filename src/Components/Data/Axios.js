@@ -8,12 +8,16 @@ import { updateIncommingTextObj } from'./Storage';
 // Initialize container
 
 //const getUrlState = useSelector(state => state.appUrl);
-//const backendURL = 'http://localhost:3001/GetText';                   //Local https Server
-const backendURL = 'http://fredrikipnr.mina-projekt.se:3001/GetText';   // Online https Sever
+//const backendURL = 'http://fredrikipnr.mina-projekt.se:3001/GetText';
+const backendURL = 'http://localhost:3001/GetText';
 
 export let axiosGet = () => {
     axios.get(backendURL).then(response => {
         console.log("axiosGet -> response", response.data)
+        const incommingObj = response.data;
+        const lastStoredObj = incommingObj;
+
+
         // Only send the current object into correct components
         updateIncommingTextObj(response.data);
     }).

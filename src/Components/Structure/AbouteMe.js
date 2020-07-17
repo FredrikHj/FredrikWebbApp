@@ -42,7 +42,8 @@ export const AbouteMe = () => {
           </CommonTextStyle.headLines>
           <CommonTextStyle.textParagraph>
             {(textObj !== undefined)
-              ?  'Text kommer snart ...................' //`${textObj}`
+              ?  //'Text kommer snart ...................' //
+               `${textObj}`
             : <Spinner str={'Text laddas'}/>
             } 
           </CommonTextStyle.textParagraph>

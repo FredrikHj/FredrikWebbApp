@@ -9,10 +9,10 @@ export let MainStyle = {
     margin-left: calc(50% - 690px);
     width: 1380px;
     height: 0px;
-    -webkit-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
+/*     -webkit-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
     -moz-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
     box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
-    color: white;
+ */    color: white;
     `,
 }
 export let MainContentStyle = {
@@ -96,7 +96,6 @@ export let HeaderStyle = {
     position: relative;
     left: 0;
     width: 80%;
-    background:none !important;
   `,
 }
 export let FooterStyle = {

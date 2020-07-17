@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/FredrikDev/static/css/main.980ae378.chunk.css",
+    "main.js": "/FredrikDev/static/js/main.14179ee8.chunk.js",
+    "main.js.map": "/FredrikDev/static/js/main.14179ee8.chunk.js.map",
+    "runtime-main.js": "/FredrikDev/static/js/runtime-main.96cfc4cc.js",
+    "runtime-main.js.map": "/FredrikDev/static/js/runtime-main.96cfc4cc.js.map",
+    "static/js/2.ea2b99d4.chunk.js": "/FredrikDev/static/js/2.ea2b99d4.chunk.js",
+    "static/js/2.ea2b99d4.chunk.js.map": "/FredrikDev/static/js/2.ea2b99d4.chunk.js.map",
+    "index.html": "/FredrikDev/index.html",
+    "precache-manifest.cdd89629b7e1b7bf712916c65a241d37.js": "/FredrikDev/precache-manifest.cdd89629b7e1b7bf712916c65a241d37.js",
+    "service-worker.js": "/FredrikDev/service-worker.js",
+    "static/css/main.980ae378.chunk.css.map": "/FredrikDev/static/css/main.980ae378.chunk.css.map",
+    "static/js/2.ea2b99d4.chunk.js.LICENSE.txt": "/FredrikDev/static/js/2.ea2b99d4.chunk.js.LICENSE.txt",
+    "static/media/logga_small.png": "/FredrikDev/static/media/logga_small.20fa48e6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.96cfc4cc.js",
+    "static/js/2.ea2b99d4.chunk.js",
+    "static/css/main.980ae378.chunk.css",
+    "static/js/main.14179ee8.chunk.js"
+  ]
+}

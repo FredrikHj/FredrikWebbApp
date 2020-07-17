@@ -9,10 +9,11 @@ export let CommonTextStyle = {
     text-align: center;
     /* margin-left: calc(50% - 100px); */
   `,
-  textParagraph: styled.section`
-    width: 1000px;
+  textParagraph: styled.p`
     margin-left: calc(50% - 500px);
     margin-bottom: 90px;
-    font-size: 15px;
+    font-size: 1.2em;
+    white-space: pre;
+    word-break: break-all;
 `,
 };

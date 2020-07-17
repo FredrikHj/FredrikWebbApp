@@ -1,0 +1,119 @@
+/* ================================================== Style Rouls for Spinner,  ==================================================
+    The Spinner has it own style i scss rouls */
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  border: .25em solid #fff;
+  border-top-color: rgba(0, 0, 0, 0);
+  vertical-align: -15%;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+
+.spinner.spinner-dark {
+  border: .25em solid black;
+  border-top-color: rgba(0, 0, 0, 0);
+}
+
+.spinner-color {
+  border: .25em solid  black;
+  border-top-color: rgba(0, 0, 0, 0);
+  -webkit-animation: spin-and-color 4s infinite linear;
+          animation: spin-and-color 4s infinite linear;
+}
+
+div.spinner {
+  display: block;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin-and-color {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  75% {
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: rotate(1440deg);
+            transform: rotate(1440deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes spin-and-color {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  75% {
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: rotate(1440deg);
+            transform: rotate(1440deg);
+    border: .25em solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+  }
+}
+/*# sourceMappingURL=Spinner.css.map */

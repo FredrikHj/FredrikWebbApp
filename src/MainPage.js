@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 // React Router - ES6 modules
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Iframe from 'react-iframe';
 
 // Style
 import { MainContentStyle, PageMainContainerStyle } from'./Components/Style/MainStyle';
@@ -12,11 +13,9 @@ import { specificBtnStyle, CommonBtnStyle } from'./Components/Style/NavBarStyle'
 
 // Generall components
 import { HeaderContent } from'./Components/Structure/HeaderContent';
-import { runGoToPage } from'./Components/Data/CommonFunctions';
 import { incommingTextObj$ } from'./Components/Data/Storage';
 import Spinner from './Components/Data/Spinner.js';
 import { navRouteName } from'./Components/Data/NavRouteName';
-import { Button } from'./Components/Data/Button';
 
 export const MainPage = () => {
   const [ textObj, updateTextObj ] = useState('');
@@ -33,7 +32,8 @@ export const MainPage = () => {
     });
   }, [newTextObj, textObj]);
   
-  console.log("MainPage -> incommingTextObj", typeof textObj)
+  console.log("MainPage -> incommingTextObj", textObj)
+  //` Text kommer snart <br/> <br/><br/>................... //
   
   return (
     <>
@@ -43,13 +43,13 @@ export const MainPage = () => {
       <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
       <PageMainContainerStyle.mainPage>
         <CommonTextStyle.headLines>
-          Välkommen In
+          Välkommen
         </CommonTextStyle.headLines>
         <CommonTextStyle.textParagraph>
           {(textObj !== undefined)
-            ?  `${textObj}`
-          : <Spinner str={'Text laddas'}/>
-          } 
+            ? textObj
+            : <Spinner str={'Text laddas'}/>
+          }
         </CommonTextStyle.textParagraph>
       </PageMainContainerStyle.mainPage>
     </>

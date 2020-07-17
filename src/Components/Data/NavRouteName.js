@@ -1,5 +1,5 @@
 export const navRouteName = {
-    headLine0: { name: 'FredrikDev', route: '/FredrikDev', id: 'fredrikDev' },
+    headLine0: { name: 'Welcome', route: '/', id: 'welcome' },
 
     headLine1: { name: 'Utveckling', route: '/Utveckling', id: 'developing', subHead: {
             headLine1: {name: 'Frontend (Webb)', route: '/Frontend', id: 'frontend'},
@@ -13,5 +13,5 @@ export const navRouteName = {
             headLine3: {name: '', route: '', id: ''},
         }
     },
-    lastHeadLine:  { name: 'Om Mig', route: '/OmMig', id: 'omMig' },
+    lastHeadLine:  { name: 'Om Mig', route: 'OmMig', id: 'omMig' },
 }

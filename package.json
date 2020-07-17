@@ -1,18 +1,18 @@
 {
   "name": "fredriks_webbapp",
-  "homepage": "http://fredrikipnr.mina-projekt.se/FredrikDev/",
-  "author": "Fredrik Hjärpe",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
+  "homepage": "http://fredrikipnr.mina-projekt.se/FredrikDev/",
   "dependencies": {
     "axios": "^0.19.0",
     "cors": "^2.8.5",
-    "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-iframe": "^1.8.0",
+    "react-pdf": "^4.1.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.3.0",
@@ -21,12 +21,8 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "browserslist": {
     "production": [
