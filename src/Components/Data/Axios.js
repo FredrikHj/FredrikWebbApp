@@ -8,8 +8,8 @@ import { updateIncommingTextObj } from'./Storage';
 // Initialize container
 
 //const getUrlState = useSelector(state => state.appUrl);
-//const backendURL = 'http://fredrikipnr.mina-projekt.se:3001/GetText';
-const backendURL = 'http://localhost:3001/GetText';
+const backendURL = 'http://fredrikipnr.mina-projekt.se:3001/GetText';
+//const backendURL = 'http://localhost:3001/GetText';
 
 export let axiosGet = () => {
     axios.get(backendURL).then(response => {

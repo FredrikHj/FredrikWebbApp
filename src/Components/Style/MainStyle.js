@@ -8,7 +8,6 @@ export let MainStyle = {
     margin-top: -8px;
     margin-left: calc(50% - 690px);
     width: 1380px;
-    height: 0px;
 /*     -webkit-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
     -moz-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
     box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
@@ -82,7 +81,10 @@ export let SubPageContainerStyle = {
   textParagraph: styled.section`
     width: 80%;
     margin-left: calc(50% - 500px);
-    font-size: 15px;
+    margin-bottom: 90px;
+    font-size: 1.2em;
+    white-space: pre;
+    word-break: break-all;
   `,
 }
 export let HeaderStyle = {
@@ -97,6 +99,15 @@ export let HeaderStyle = {
     left: 0;
     width: 80%;
   `,
+
+  portrait: styled.img`
+      margin-top: 10px;
+      margin-left: -150px;
+      width: 5%;
+      height: 70%;
+      border-radius: 50px;
+      &&; 
+  `,
 }
 export let FooterStyle = {
   footerContainer: styled.section`
@@ -107,7 +118,7 @@ export let FooterStyle = {
     height: 100px;
     color: black;
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     `,
   col1: styled.h2`
     width: 30%;

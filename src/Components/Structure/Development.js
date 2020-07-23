@@ -68,12 +68,13 @@ export const Development = () => {
           </SubPageContainerStyle.sidebar>
           <SubPageContainerStyle.mainContent>
           <CommonTextStyle.headLines>
-            Webbtjänster
+            Utvecklings - Tjänster
           </CommonTextStyle.headLines>
             <SubPageContainerStyle.textParagraph>
               {(textObj !== undefined)
-                ?  `${textObj}`
-                : <Spinner str={'Text laddas'}/>
+                ? 'Text kommer inom en snar framtid!!!' 
+                  //textObj
+                : <Spinner str={'Text laddas ......'}/>
               } 
             </SubPageContainerStyle.textParagraph>
           </SubPageContainerStyle.mainContent>
