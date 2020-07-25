@@ -41,7 +41,9 @@ export const MainPage = () => {
         <HeaderContent/>
       </MainContentStyle.header>
       <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
+
       <PageMainContainerStyle.mainPage>
+      <section style={{color: 'red', marginLeft: '600px'}}>{`bredd: ${window.innerWidth} höjd: ${window.innerHeight}`}</section>
         <CommonTextStyle.headLines>
           Välkommen
         </CommonTextStyle.headLines>

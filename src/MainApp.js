@@ -22,6 +22,7 @@ import { MainPage } from'./MainPage';
 import { HeaderContent } from'./Components/Structure/HeaderContent';
 
 import { from } from 'rxjs';
+import { color } from './Components/Style/CommonCSSRoules';
 const MainApp = () => {
   const [ appName, updateAppName ] = useState('');
   const [ pageRoute, setPageRoute ] = useState('');

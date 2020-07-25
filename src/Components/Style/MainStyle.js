@@ -2,17 +2,18 @@
 Imports module */
 import styled from 'styled-components';
 import { color } from'./CommonCSSRoules';
+import { responsiveDevice } from './Responsive';
 
 export let MainStyle = {
   body: styled.section`
     margin-top: -8px;
-    margin-left: calc(50% - 690px);
     width: 1380px;
-/*     -webkit-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
-    -moz-box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
-    box-shadow: -53px -33px 294px 200px rgba(0,0,0,0.75);
- */    color: white;
-    `,
+    color: white;
+    margin-left: calc(50% - 690px);
+    @media ${responsiveDevice.mobile} {
+      margin-left: 0;
+    }
+  `,
 }
 export let MainContentStyle = {
   header: styled.section`
@@ -21,6 +22,9 @@ export let MainContentStyle = {
     justify-content: space-between;
     height: 75px;
     background-color: none;
+    @media ${responsiveDevice.mobile} {
+      margin-left: 0;
+    }
   `,
   headerEndLine: styled.section`
     width: 90%;
@@ -39,13 +43,22 @@ export let MainContentStyle = {
 }
 export let PageMainContainerStyle = {
   mainPage: styled.section`
-    display: flex;
-    width: 1225px;
-    flex-direction: column;
-    margin-left: 75px;
     margin-top: 90px;
+    display: flex;
+    flex-direction: column;
     background-color: ${color.darkBlackDarkGreen};
+    width: 1225px;
+    margin-left: 75px;
     border-radius: 70px;
+    @media ${responsiveDevice.mobile} {
+      margin-left: 35px;
+      font-size: 2em;
+    }
+    @media ${responsiveDevice.laptop} {
+      margin-top: 45px;
+      overflow-y: scroll;
+      height: 450px
+    }
   `,
 }
 export let SubPageContainerStyle = {
@@ -85,6 +98,7 @@ export let SubPageContainerStyle = {
     font-size: 1.2em;
     white-space: pre;
     word-break: break-all;
+
   `,
 }
 export let HeaderStyle = {
@@ -93,20 +107,28 @@ export let HeaderStyle = {
     left: 0;
     width: 16.5%;
     height: 158%;
+    @media ${responsiveDevice.mobile} {
+      display: none;
+    }
   `,
   appLogoLink: styled.img`
     position: relative;
     left: 0;
     width: 80%;
+    @media ${responsiveDevice.mobile} {
+      display: none;
+    }
   `,
-
   portrait: styled.img`
-      margin-top: 10px;
-      margin-left: -150px;
-      width: 5%;
-      height: 70%;
-      border-radius: 50px;
-      &&; 
+    margin-top: 10px;
+    margin-left: -150px;
+    width: 5%;
+    height: 70%;
+    border-radius: 50px;
+    @media ${responsiveDevice.mobile} {
+      width: 20%;
+      height: 200%;
+    }
   `,
 }
 export let FooterStyle = {
@@ -119,6 +141,10 @@ export let FooterStyle = {
     color: black;
     position: fixed;
     bottom: 0px;
+    @media ${responsiveDevice.mobile} {
+      margin-left: 35px;
+      width: 1100px;
+    }
     `,
   col1: styled.h2`
     width: 30%;

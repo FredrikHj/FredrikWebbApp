@@ -2,8 +2,8 @@
 Imports module */
 import styled from 'styled-components';
 import { color } from'./CommonCSSRoules';
+import { responsiveDevice } from './Responsive';
 
-import { from } from 'rxjs';
 export let NavBarStyle = {
   topBarContainer: styled.section`
     width: 65%;
@@ -11,6 +11,9 @@ export let NavBarStyle = {
     border-bottom-left-radius: 30px;
     display: flex;
     flex-direction: row;
+    @media ${responsiveDevice.mobile} {
+      margin-left: 0;
+    }
   `,
   contentContainer: styled.section`
     width: 650px;
