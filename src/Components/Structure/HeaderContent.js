@@ -48,7 +48,7 @@ export const HeaderContent = (props) => {
         <HeaderStyle.portrait src={ fredrikPortrait } alt="Porträtt - Fredrik Hjärpe"/>
         <NavBarStyle.topBarContainer>
         <NavBarStyle.mobileContentContainer>
-          'Meny kommer snart ...'
+          Meny kommer snart ...
         </NavBarStyle.mobileContentContainer>
           <NavBarStyle.contentContainer>
             {/* 

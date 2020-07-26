@@ -22,13 +22,13 @@ export let CommonTextStyle = {
     @media ${responsiveDevice.mobile} {
       margin-left: 50px;
       font-size: 1.3em;
-      overflow-y: scroll;
+      overflow-y: auto;
       height: 900px;
       width: 90%;
     }
     @media ${responsiveDevice.laptop} {
       margin-top: -20px;
-      overflow-y: scroll;
+      overflow-y: auto;
       height: 450px
     }
   `,

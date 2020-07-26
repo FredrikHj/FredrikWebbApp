@@ -6,7 +6,6 @@ import { responsiveDevice } from './Responsive';
 
 export let MainStyle = {
   body: styled.section`
-    border: 1px solid red;
     margin-top: -8px;
     width: 1380px;
     color: white;

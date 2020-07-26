@@ -26,12 +26,16 @@ export let NavBarStyle = {
     }
   `,
   mobileContentContainer: styled.h1`
-    width: 100%;
-    text-align: center;
-    line-height: 150px;
-    font-size: 3em;
-    
+    @media ${responsiveDevice.mobile} {
+      width: 100%;
+      text-align: center;
+      line-height: 150px;
+      font-size: 3em; 
+    }
     @media ${responsiveDevice.desktop} {
+      display: none;  
+    }
+    @media ${responsiveDevice.laptop} {
       display: none;  
     }
   `,
