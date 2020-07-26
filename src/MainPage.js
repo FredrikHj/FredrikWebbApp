@@ -16,6 +16,7 @@ import { HeaderContent } from'./Components/Structure/HeaderContent';
 import { incommingTextObj$ } from'./Components/Data/Storage';
 import Spinner from './Components/Data/Spinner.js';
 import { navRouteName } from'./Components/Data/NavRouteName';
+let test = 'fe<br/>awsf';
 
 export const MainPage = () => {
   const [ textObj, updateTextObj ] = useState('');
@@ -31,7 +32,13 @@ export const MainPage = () => {
       }
     });
   }, [newTextObj, textObj]);
-  
+/*   let fixStrParagraph = (incommingTextStr) => {
+    let sendText = '';
+    sendText = incommingTextStr.replace('<br/><br/>', document.write("<br/><br/>");
+    console.log("fixStrParagraph -> incommingTextStr", sendText)
+
+    return sendText;
+  } */
   console.log("MainPage -> incommingTextObj", textObj)
   //` Text kommer snart <br/> <br/><br/>................... //
   
@@ -41,9 +48,7 @@ export const MainPage = () => {
         <HeaderContent/>
       </MainContentStyle.header>
       <MainContentStyle.headerEndLine></MainContentStyle.headerEndLine>
-
       <PageMainContainerStyle.mainPage>
-      <section style={{color: 'red', marginLeft: '600px'}}>{`bredd: ${window.innerWidth} höjd: ${window.innerHeight}`}</section>
         <CommonTextStyle.headLines>
           Välkommen
         </CommonTextStyle.headLines>

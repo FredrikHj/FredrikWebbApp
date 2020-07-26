@@ -21,6 +21,19 @@ export let NavBarStyle = {
     flex-direction: row;
     align-items: center;
     margin-left: 10%;
+    @media ${responsiveDevice.mobile} {
+      display: none;
+    }
+  `,
+  mobileContentContainer: styled.h1`
+    width: 100%;
+    text-align: center;
+    line-height: 150px;
+    font-size: 3em;
+    
+    @media ${responsiveDevice.desktop} {
+      display: none;  
+    }
   `,
 }
 // ============================== Btton Style ==============================
@@ -70,6 +83,9 @@ export const specificBtnStyle = {
   },
   lastNavPageContainer: styled.section`
     margin-top: 7px;
+    @media ${responsiveDevice.mobile} {
+      display: none;
+    }
   `,
   lastNavPageInactive: {
     backgroundColor: color.darkBlackDarkGreen,

@@ -43,10 +43,13 @@ export const HeaderContent = (props) => {
           : 
           <specificBtnStyle.logo>
               <HeaderStyle.appLogoLink src={ fredrikLogo } alt="Fredriks logga!" id="mainPage" onClick={ runGoToPage }/>
-            </specificBtnStyle.logo>
+          </specificBtnStyle.logo>
         }
         <HeaderStyle.portrait src={ fredrikPortrait } alt="Porträtt - Fredrik Hjärpe"/>
         <NavBarStyle.topBarContainer>
+        <NavBarStyle.mobileContentContainer>
+          'Meny kommer snart ...'
+        </NavBarStyle.mobileContentContainer>
           <NavBarStyle.contentContainer>
             {/* 
             <Button
@@ -78,21 +81,21 @@ export const HeaderContent = (props) => {
               /> */}
             </NavBarStyle.contentContainer>
             <specificBtnStyle.lastNavPageContainer>
-            <Button
-              styleBtn={ runAppUrl() !== '/OmMig' && specificBtnStyle.btnInactive || specificBtnStyle.btnActive}
-              content={runAppUrl() !== '/OmMig'
-              && <CommonBtnStyle.btnHeadline id={ navRouteName.lastHeadLine.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPageInactive }>{ navRouteName.lastHeadLine.name }</CommonBtnStyle.btnHeadline> 
-              ||
-                <>
-                  <CommonBtnStyle.btnHeadline id={ navRouteName.lastHeadLine.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPageActive }>{ navRouteName.lastHeadLine.name }</CommonBtnStyle.btnHeadline>
-                  <CommonBtnStyle.btnMarker></CommonBtnStyle.btnMarker>
-                </>
+              <Button
+                styleBtn={ runAppUrl() !== '/OmMig' && specificBtnStyle.btnInactive || specificBtnStyle.btnActive}
+                content={runAppUrl() !== '/OmMig'
+                && <CommonBtnStyle.btnHeadline id={ navRouteName.lastHeadLine.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPageInactive }>{ navRouteName.lastHeadLine.name }</CommonBtnStyle.btnHeadline> 
+                ||
+                  <>
+                    <CommonBtnStyle.btnHeadline id={ navRouteName.lastHeadLine.id } onClick={ runGoToPage } style={ specificBtnStyle.lastNavPageActive }>{ navRouteName.lastHeadLine.name }</CommonBtnStyle.btnHeadline>
+                    <CommonBtnStyle.btnMarker></CommonBtnStyle.btnMarker>
+                  </>
 
-              }
-              onClickFunction={runGoToPage}
-              id={ navRouteName.lastHeadLine.id }
-            />
-          </specificBtnStyle.lastNavPageContainer>
+                }
+                onClickFunction={runGoToPage}
+                id={ navRouteName.lastHeadLine.id }
+              />
+            </specificBtnStyle.lastNavPageContainer>
 
      
         </NavBarStyle.topBarContainer>

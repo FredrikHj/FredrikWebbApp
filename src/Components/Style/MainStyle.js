@@ -6,6 +6,7 @@ import { responsiveDevice } from './Responsive';
 
 export let MainStyle = {
   body: styled.section`
+    border: 1px solid red;
     margin-top: -8px;
     width: 1380px;
     color: white;
@@ -24,6 +25,7 @@ export let MainContentStyle = {
     background-color: none;
     @media ${responsiveDevice.mobile} {
       margin-left: 0;
+      height: 250px;
     }
   `,
   headerEndLine: styled.section`
@@ -33,6 +35,11 @@ export let MainContentStyle = {
     left: 138px;
     top: 0px;
     background-color: ${color.darkOrange};
+    @media ${responsiveDevice.mobile} {
+      width: 100%;
+      margin-left: -70px;
+      margin-top: 150px;
+    }
   `,
   contentsNavBar: styled.section`
     width: 200px;
@@ -51,12 +58,12 @@ export let PageMainContainerStyle = {
     margin-left: 75px;
     border-radius: 70px;
     @media ${responsiveDevice.mobile} {
-      margin-left: 35px;
+      margin-left: 110px;
+      margin-top: 150px;
       font-size: 2em;
+      height: 1200px;
     }
     @media ${responsiveDevice.laptop} {
-      margin-top: 45px;
-      overflow-y: scroll;
       height: 450px
     }
   `,
@@ -98,7 +105,6 @@ export let SubPageContainerStyle = {
     font-size: 1.2em;
     white-space: pre;
     word-break: break-all;
-
   `,
 }
 export let HeaderStyle = {
@@ -126,8 +132,9 @@ export let HeaderStyle = {
     height: 70%;
     border-radius: 50px;
     @media ${responsiveDevice.mobile} {
-      width: 20%;
-      height: 200%;
+      margin-left: 10px;
+      width: 25%;
+      height: 150%;
     }
   `,
 }
@@ -142,8 +149,9 @@ export let FooterStyle = {
     position: fixed;
     bottom: 0px;
     @media ${responsiveDevice.mobile} {
-      margin-left: 35px;
-      width: 1100px;
+      margin-left: 140px;
+      width: 1150px;
+      font-size: 2em;
     }
     `,
   col1: styled.h2`
