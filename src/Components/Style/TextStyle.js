@@ -5,24 +5,26 @@ import { responsiveDevice } from './Responsive';
 
 export let CommonTextStyle = {
   headLines: styled.h1`
-    font-size: 2em;
+    font-size: 2.3em;
     width: 100%;
     text-align: center;
-    @media ${responsiveDevice.mobile} {
+/*     @media ${responsiveDevice.mobile} {
       font-size: 2.5em;
-    }
+    } */
   `,
   textParagraph: styled.p`
-    margin-left: calc(50% - 500px);
-    margin-top: -10px;
-    margin-bottom: 10px;
-    font-size: 1.2em;
+    width: 95%;
+    margin-left: 2%;
+    margin-top: -1%;
+    margin-bottom: 5%;
+    font-size: 2em;
     white-space: pre-wrap;
+    overflow-y: auto;
 
+/* 
     @media ${responsiveDevice.mobile} {
       margin-left: 50px;
       font-size: 1.3em;
-      overflow-y: auto;
       height: 900px;
       width: 90%;
     }
@@ -30,6 +32,6 @@ export let CommonTextStyle = {
       margin-top: -20px;
       overflow-y: auto;
       height: 450px
-    }
+    } */
   `,
 };

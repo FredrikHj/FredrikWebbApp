@@ -11,22 +11,24 @@ export let NavBarStyle = {
     border-bottom-left-radius: 30px;
     display: flex;
     flex-direction: row;
-    @media ${responsiveDevice.mobile} {
+    height: 10vh;
+/*     @media ${responsiveDevice.mobile} {
       margin-left: 0;
-    }
+    } */
   `,
   contentContainer: styled.section`
-    width: 650px;
+    border: 1px solid red;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 10%;
-    @media ${responsiveDevice.mobile} {
+    margin-left: 5%;
+/*     @media ${responsiveDevice.mobile} {
       display: none;
-    }
+    } */
   `,
   mobileContentContainer: styled.h1`
-    @media ${responsiveDevice.mobile} {
+/*     @media ${responsiveDevice.mobile} {
       width: 100%;
       text-align: center;
       line-height: 150px;
@@ -37,7 +39,7 @@ export let NavBarStyle = {
     }
     @media ${responsiveDevice.laptop} {
       display: none;  
-    }
+    } */
   `,
 }
 // ============================== Btton Style ==============================
@@ -80,16 +82,18 @@ export const specificBtnStyle = {
     border: none;
   `,
   btnInactive: {
+    fontSize: '1.5em',
     backgroundColor: color.darkBlackDarkGreen,
   },
   btnActive: {
+    fontSize: '1.5em',
     backgroundColor: color.darkOrange,
   },
-  lastNavPageContainer: styled.section`
+  navPageAboute: styled.section`
     margin-top: 7px;
-    @media ${responsiveDevice.mobile} {
+/*     @media ${responsiveDevice.mobile} {
       display: none;
-    }
+    } */
   `,
   lastNavPageInactive: {
     backgroundColor: color.darkBlackDarkGreen,

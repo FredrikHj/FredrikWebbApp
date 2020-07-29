@@ -21,11 +21,11 @@ const FooterContent = () => {
     },[ appName ]);
     return (
         <>
-          <FooterStyle.col1>Copyright: Fredrik Hjärpe</FooterStyle.col1>
+          <FooterStyle.col>Copyright: Fredrik Hjärpe</FooterStyle.col>
    {/*        <a href="data_struktur/kontakt_form.html" title="Kontakt formulär"><img class="contact_form" src="data_struktur/bilder/contact_form.png" titl="" alt="Kontakt formulär!"></a>
  */}
-          <FooterStyle.col2>{/* Kontakt formulär! */}</FooterStyle.col2>
-          <FooterStyle.col3>{ addDateTime }</FooterStyle.col3>
+          <FooterStyle.col>{/* Kontakt formulär! */}</FooterStyle.col>
+          <FooterStyle.col>{ addDateTime }</FooterStyle.col>
         </>
 
     );

@@ -2,17 +2,26 @@
 Imports module */
 import styled from 'styled-components';
 import { color } from'./CommonCSSRoules';
-import { responsiveDevice } from './Responsive';
+import { responsiveDeviceSize, responsiveDevice } from './Responsive';
 
+const widths = {
+  bodyMobile: 100,
+}
 export let MainStyle = {
   body: styled.section`
-    margin-top: -8px;
-    width: 1380px;
+    width: ${widths.bodyMobile}%;
     color: white;
-    margin-left: calc(50% - 690px);
-    @media ${responsiveDevice.mobile} {
-      margin-left: 0;
+    margin-left: 0px;
+    height: 95vh;
+    
+    /*     @media ${responsiveDeviceSize.mobile1} {
+      border: none;
+      margin-left: 50px;
     }
+    @media ${responsiveDeviceSize.mobile2} {
+      border: none;
+      margin-left: 100px;
+    } */
   `,
 }
 export let MainContentStyle = {
@@ -20,25 +29,26 @@ export let MainContentStyle = {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 75px;
+    height: 22.3%;
     background-color: none;
-    @media ${responsiveDevice.mobile} {
+
+
+/*     @media ${responsiveDevice.mobile} {
       margin-left: 0;
       height: 250px;
-    }
+    } */
   `,
   headerEndLine: styled.section`
-    width: 90%;
-    position: relative;
+    width: 100%;
     height: 20px;
-    left: 138px;
-    top: 0px;
+    margin-left: 0px;
+    margin-top: 0%;
     background-color: ${color.darkOrange};
-    @media ${responsiveDevice.mobile} {
+/*     @media ${responsiveDevice.mobile} {
       width: 100%;
       margin-left: -70px;
       margin-top: 150px;
-    }
+    } */
   `,
   contentsNavBar: styled.section`
     width: 200px;
@@ -49,22 +59,24 @@ export let MainContentStyle = {
 }
 export let PageMainContainerStyle = {
   mainPage: styled.section`
-    margin-top: 90px;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     background-color: ${color.darkBlackDarkGreen};
-    width: 1225px;
-    margin-left: 75px;
+    width: 95%;
+    height: 60vh;
+    margin-left: 3%;
     border-radius: 70px;
-    @media ${responsiveDevice.mobile} {
-      margin-left: 110px;
-      margin-top: 150px;
+/*     @media ${responsiveDeviceSize.mobile1} {
+      margin-left: calc(50% - 950/2px);
+      margin-top: 50px;
       font-size: 2em;
+      max-width: 950px;
       height: 1200px;
     }
     @media ${responsiveDevice.laptop} {
       height: 450px
-    }
+    } */
   `,
 }
 export let SubPageContainerStyle = {
@@ -112,60 +124,49 @@ export let HeaderStyle = {
     left: 0;
     width: 16.5%;
     height: 158%;
-    @media ${responsiveDevice.mobile} {
+/*     @media ${responsiveDevice.mobile} {
       display: none;
-    }
+    } */
   `,
   appLogoLink: styled.img`
     position: relative;
     left: 0;
     width: 80%;
-    @media ${responsiveDevice.mobile} {
+/*     @media ${responsiveDevice.mobile} {
       display: none;
-    }
+    } */
   `,
   portrait: styled.img`
-    margin-top: 10px;
-    margin-left: -150px;
-    width: 5%;
-    height: 70%;
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 23%;
+    height: 85%;
     border-radius: 50px;
-    @media ${responsiveDevice.mobile} {
+/*     @media ${responsiveDevice.mobile} {
       margin-left: 10px;
       width: 25%;
       height: 150%;
     }
-  `,
+ */  `,
 }
 export let FooterStyle = {
   footerContainer: styled.section`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1380px;
-    height: 100px;
+    width: ${widths.bodyMobile}%;
     color: black;
-    position: fixed;
-    bottom: 0px;
-    @media ${responsiveDevice.mobile} {
+    position: fixed;    
+    bottom: 0;
+    font-size: 1.3em;
+    font-weight: bold;
+/*     @media ${responsiveDevice.mobile} {
       margin-left: 140px;
       width: 1150px;
       font-size: 2em;
-    }
+    } */
     `,
-  col1: styled.h2`
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    `,
-  col2: styled.h2`
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    `,
-  col3: styled.h2`
+  col: styled.p`
     width: 30%;
     display: flex;
     flex-direction: row;
